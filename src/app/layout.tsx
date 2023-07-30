@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${openSans.variable} font-sans`}>{children}</body>
+      <body className={`${openSans.variable} font-sans tracking-[0.02em]`}>{children}</body>
     </html>
   )
 }

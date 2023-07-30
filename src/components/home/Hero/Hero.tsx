@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = () => {
 
   return (
     <div id="hero" className="w-full h-fit">
-      <div className=" lg:max-w-[1140px]  lg:max-w-[960px]  md:max-w-[720px] sm:max-w-[540px] w-full  mx-auto text-center flex items-center justify-center">
+      <div className=" xl:max-w-[1140px]  lg:max-w-[960px]  md:max-w-[720px] sm:max-w-[540px] w-full  mx-auto text-center flex items-center justify-center">
         <div className="h-screen text-left w-full flex justify-center flex-col">
           <h1 className=" bg-white font-bold mb-3 uppercase  text-5xl w-fit">
             I'm 
