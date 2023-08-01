@@ -1,11 +1,14 @@
 import '../styles/globals.css'
 import type { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 
-const openSans = Open_Sans({ 
+const poppins = Poppins({
   subsets: ['latin'],
-  variable: '--font-openSans'
- })
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+});
 
 export const metadata: Metadata = {
   title: 'Youness JABAR Portfolio',
@@ -19,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${openSans.variable} font-sans tracking-[0.02em]`}>{children}</body>
+      <body className={`${poppins.variable} font-sans tracking-[0.02em]`}>{children}</body>
     </html>
   )
 }
