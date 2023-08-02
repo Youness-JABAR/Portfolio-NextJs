@@ -9,7 +9,8 @@ import Vuejs from '@/assets/icons/skills/vuejs.svg?url';
 import Bootstrap from '@/assets/icons/skills/getbootstrap.svg?url';
 import TailwindCss from '@/assets/icons/skills/tailwind.svg?url';
 import Nodejs from '@/assets/icons/skills/nodejs.svg?url';
-import Laravel from '@/assets/icons/skills/django.svg?url';
+import Django from '@/assets/icons/skills/django.svg?url';
+import Laravel from '@/assets/icons/skills/laravel.svg?url';
 import Git from '@/assets/icons/skills/git.svg?url';
 import Vercel from '@/assets/icons/skills/vercel.svg?url';
 import Graphql from '@/assets/icons/skills/graphql.svg?url';
@@ -38,6 +39,7 @@ const Skills: React.FC = () => {
         <SkillCard src={TailwindCss} alt="TailwindCss" title="TailwindCss" />
         <SkillCard src={Nodejs} alt="Node.js" title="Node.js" />
         <SkillCard src={Laravel} alt="Laravel" title="Laravel" />
+        <SkillCard src={Django} alt="Django" title="Django" />
         <SkillCard src={Git} alt="Git" title="Git" />
         <SkillCard src={Vercel} alt="Vercel" title="Vercel" />
         <SkillCard src={Graphql} alt="Graphql" title="GraphQL" />

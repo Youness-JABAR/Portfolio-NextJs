@@ -1,5 +1,7 @@
 import Background from '@/components/common/Background'
+import Footer from '@/components/common/Footer/Footer'
 import About from '@/components/home/About/About'
+import Contact from '@/components/home/Contact/Contact'
 import Hero from '@/components/home/Hero/Hero'
 import AiProjects from '@/components/home/Projects/AiProjects'
 import Projects from '@/components/home/Projects/Projects'
@@ -14,6 +16,8 @@ export default function Home() {
     <Skills/>
     <Projects/>
     <AiProjects/>
+    {/* <Contact/> */}
+    <Footer/>
 
     <div className="py-96 my-96" ></div>
     <div className="py-96 my-96" ></div>
