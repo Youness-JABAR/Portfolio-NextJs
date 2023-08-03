@@ -16,12 +16,8 @@ export default function Home() {
     <Skills/>
     <Projects/>
     <AiProjects/>
-    {/* <Contact/> */}
+    <Contact/>
     <Footer/>
-
-    <div className="py-96 my-96" ></div>
-    <div className="py-96 my-96" ></div>
-      hello world
     </>
   )
 }
