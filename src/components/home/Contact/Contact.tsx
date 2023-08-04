@@ -3,7 +3,7 @@ import { ContactForm } from './ContactForm';
 
 const Contact: React.FC = () => {
   return (
-    <section id="about" className="w-full h-auto bg-white pt-24 pb-24">
+    <section id="contact" className="w-full h-auto bg-white pt-24 pb-24">
       
       <div className=" xl:max-w-[1140px]  lg:max-w-[960px]  md:max-w-[720px] sm:max-w-[540px] w-full  mx-auto text-center flex items-center justify-center">
         <div className="grid grid-cols-2 gap-24">

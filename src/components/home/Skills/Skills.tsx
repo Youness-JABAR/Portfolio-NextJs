@@ -21,7 +21,7 @@ import SkillCard from './SkillCard';
 
 const Skills: React.FC = () => {
   return (
-    <section id="about" className="w-full h-auto bg-White pt-24 pb-24">
+    <section id="skills" className="w-full h-auto bg-White pt-24 pb-24">
       <div className="xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full mx-auto text-center flex items-center justify-center">
         <div className="mb-16 text-center">
           <h2 className="text-2xl font-semibold uppercase">Skills</h2>
