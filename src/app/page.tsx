@@ -1,6 +1,7 @@
 import Background from '@/components/common/Background'
 import Footer from '@/components/common/Footer/Footer'
 import Navbar from '@/components/common/Navbar/Navbar'
+import ViewOnGithub from '@/components/common/ViewOnGithub'
 import About from '@/components/home/About/About'
 import Contact from '@/components/home/Contact/Contact'
 import Hero from '@/components/home/Hero/Hero'
@@ -20,6 +21,7 @@ export default function Home() {
     <AiProjects/>
     <Contact/>
     <Footer/>
+    <ViewOnGithub/>
     </>
   )
 }
