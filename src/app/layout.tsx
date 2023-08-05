@@ -11,8 +11,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+
   title: 'Youness JABAR Portfolio',
   description: "I'm a web Developer And Ai lover, Worked on various types of projects and I'm confident you'll enjoy working with me.",
+  icons: {
+    icon: '/favicon.png',
+  },
+
 }
 
 export default function RootLayout({

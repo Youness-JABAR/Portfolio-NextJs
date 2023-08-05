@@ -26,7 +26,7 @@ const Footer: React.FC<HeroProps> = () => {
 						<a
 							target="_blank"
 							rel="noreferrer"
-							className=" mx-2 font-semibold text-[#346fbf] hover:underline"
+							className=" mx-2 font-semibold text-primary hover:underline"
 							href="https://github.com/Youness-JABAR"
 						>
 							 <strong>Youness JABAR</strong>

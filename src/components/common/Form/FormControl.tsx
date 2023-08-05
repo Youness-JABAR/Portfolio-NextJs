@@ -15,9 +15,10 @@ const FormControl: FC<FormControlProps & HTMLAttributes<HTMLDivElement>> = ({
 	return (
 		<>
 			<div
-				className={clsx('relative transition bg-gray-100 border-2 border-transparent', {
+				className={clsx('relative transition bg-gray-100 border-2', {
 					className,
 					'border-error': error,
+					'border-transparent': !error,
 				})}
 				{...rest}
 			>

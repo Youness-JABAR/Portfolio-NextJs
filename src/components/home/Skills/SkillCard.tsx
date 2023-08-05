@@ -14,7 +14,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ src, alt, title }) => {
       <div className="relative flex flex-col  bg-white bg-clip-border border rounded border-solid border-[rgba(0,0,0,0.125)] p-4 text-center">
         <Image src={src} alt={alt} width={100} height={100} className="block h-[4.5em] mt-[10%] mx-auto" />
         <div className="my-4">
-          <h5 className="m-2 align-middle text-[#898989] text-xl font-semibold">{title}</h5>
+          <h5 className="m-2 align-middle text-gray-400 text-xl font-semibold">{title}</h5>
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ const About: React.FC = () => {
       <div className=" xl:max-w-[1140px]  lg:max-w-[960px]  md:max-w-[720px] sm:max-w-[540px] w-full  mx-auto text-center flex items-center justify-center">
         <div className="grid grid-cols-3 gap-24">
           <div className="lg:col-span-1 col-span-3  ">
-            <div className="lg:pb-8 p-0 border-solid border-[20px] border-[#3572c4]">
+            <div className="lg:pb-8 p-0 border-solid border-[20px] border-primary">
               <div className="about-img">
                 <img
                   src="/me.jpg"

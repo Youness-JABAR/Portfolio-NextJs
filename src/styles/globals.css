@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+:root {
+	--color-primary: 39 111 208;
+	--color-error: 255 61 61;
+	--color-success: 65 171 92;
+    --color-gray-400: 137 137 137;
+	--color-gray-100: 247 247 247;
+}
+
+.grecaptcha-badge {
+	display: none !important;
+}

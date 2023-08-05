@@ -11,7 +11,7 @@ const ButtonStyle: FC<PropsWithChildren<ButtonStyleProps>> = ({ isLoading, child
 	return (
 		<div
 			className={clsx(
-				'relative flex items-center px-5 py-4 overflow-hidden font-medium text-white bg-black group lg:py-5 lg:px-7 text-md lg:text-lg',
+				'relative flex items-center px-5 py-4 overflow-hidden font-medium text-white bg-black group lg:py-3 lg:px-7 text-md lg:text-md',
 				{
 					'cursor-progress': isLoading,
 				},

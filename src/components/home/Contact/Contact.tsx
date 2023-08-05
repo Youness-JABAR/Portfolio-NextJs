@@ -28,11 +28,6 @@ const Contact: React.FC = () => {
           <div className="lg:col-span-1 col-span-2">
             <div className="about-descr">
             <ContactForm />
-
-              <p className=" max-w-[80%] text-left my-6 text-[#736f6f] text-[15px]  leading-5 tracking-[0.02em]">
-                Ambitious, curious and passionate about new technologies and SEO, able to learn
-                quickly, with creative problem-solving and critical analysis skills.
-              </p>
             </div>
           </div>
         </div>

@@ -35,10 +35,11 @@ const Hero: React.FC<HeroProps> = () => {
       <div className=" xl:max-w-[1140px]  lg:max-w-[960px]  md:max-w-[720px] sm:max-w-[540px] w-full  mx-auto text-center flex items-center justify-center">
         <div className="h-screen text-left w-full flex justify-center flex-col">
           <h1 className=" bg-white font-bold mb-3 uppercase  text-5xl w-fit">
-            I'm 
-             <span ref={typedRef} className="" data-typed-items="Youness JABAR, A Full Stack Developer, A Software Engineer And AI Lover"></span>
+            <span className='pr-2'> I'm</span>
+              
+             <span ref={typedRef} className="pl-1" data-typed-items=" Youness JABAR, A Full Stack Developer, A Software Engineer"></span>
           </h1>
-          <p className=" tracking-[.1em] text-xl mt-0 mb-8 capitalize text-white bg-black font-medium w-fit">Full Stack Developer, AI lover</p>
+          <p className=" tracking-[.1em] text-xl mt-0 mb-8 capitalize text-white bg-black font-medium w-fit"> Full Stack Developer, AI lover</p>
 
           <ul className="list-unstyled ">
             <li className='float-left mr-5'>

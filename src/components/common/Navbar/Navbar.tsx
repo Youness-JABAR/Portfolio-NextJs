@@ -19,12 +19,12 @@ const Navbar: FC<Props> = () => {
 			if (!navRef.current) {
 				return;
 			}
-			const navHeight = navRef.current.offsetHeight;
-			if (window.pageYOffset > navHeight) {
-				navRef.current.classList.add('bg-white', 'shadow-sm');
-			} else {
-				navRef.current.classList.remove('bg-white', 'shadow-sm');
-			}
+			// const navHeight = navRef.current.offsetHeight;
+			// if (window.pageYOffset > navHeight) {
+			// 	navRef.current.classList.add('bg-white', 'shadow-sm');
+			// } else {
+			// 	navRef.current.classList.remove('bg-white', 'shadow-sm');
+			// }
 		};
 		scrollHandler();
 		window.addEventListener('scroll', scrollHandler);
@@ -34,7 +34,7 @@ const Navbar: FC<Props> = () => {
 	}, []);
 
 	return (
-		<header ref={navRef} className="fixed top-0 left-0 z-10 w-full h-28 transition py-7 lg:h-auto">
+		<header ref={navRef} className="fixed top-0 left-0 z-10 w-full h-22 transition py-3 bg-white shadow-sm">
 			<motion.div
 				className="container flex items-center justify-between"
 				initial={{
@@ -54,11 +54,11 @@ const Navbar: FC<Props> = () => {
                 <img
                     src="/logo.png"
                     alt="Logo"
-                    className="w-12 h-12 object-contain"
+                    className=" ml-5 w-12 h-12 object-contain"
                 />
 				<ul
 					className={clsx(
-						'absolute left-0 flex flex-col items-center w-full text-black  top-24 h-80 bg-body-bg',
+						'absolute left-0 flex flex-col items-center w-full text-black  top-16 h-nav bg-body-bg',
 						'lg:static lg:flex-row lg:w-auto lg:h-auto',
 						{
 							'bg-transparent pointer-events-none lg:pointer-events-auto': !showMenu,

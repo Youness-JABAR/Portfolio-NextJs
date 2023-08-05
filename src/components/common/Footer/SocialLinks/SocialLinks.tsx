@@ -2,9 +2,6 @@
 import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
 
-import Envelope from '@/assets/icons/envelope.svg';
-import Github from '@/assets/icons/social-media/Github.svg';
-import LinkedIn from '@/assets/icons/social-media/Linkedin.svg';
 import { socialLinks } from '@/data/socialLinks';
 import { SocialLink } from './SocialLink';
 

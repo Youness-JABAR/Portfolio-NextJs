@@ -12,7 +12,7 @@ const NavLink: FC<Props> = ({ children, to, className, ...rest }) => {
 		<button
 			type="button"
 			onClick={() => scrollIntoView(to)}
-			className={clsx('w-full h-full text-lg font-medium transition lg:pr-6 hover:text-primary-500', className)}
+			className={clsx('w-full h-full text-md font-medium transition lg:pr-6 hover:text-primary', className)}
 			data-to={to}
 			{...rest}
 		>

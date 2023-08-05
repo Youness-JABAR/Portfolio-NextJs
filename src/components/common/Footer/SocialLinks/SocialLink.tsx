@@ -5,7 +5,7 @@ const SocialLink: FC<AnchorHTMLAttributes<HTMLAnchorElement>> = ({ children, cla
 	return (
 		<a
 			className={clsx(
-				'hover:text-[#346fbf] transition-all duration-[0.5s] ease-[ease-in-out] delay-[0s] ',
+				'hover:text-primary transition-all duration-[0.5s] ease-[ease-in-out] delay-[0s] ',
 				className,
 			)}
 			{...rest}

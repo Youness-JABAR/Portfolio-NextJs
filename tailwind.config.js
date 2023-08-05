@@ -15,6 +15,21 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+			screens: {
+				xs: '440px',
+			},
+      colors: {
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        error: 'rgb(var(--color-error) / <alpha-value>)',
+				success: 'rgb(var(--color-success) / <alpha-value>)',
+        gray: {
+					400: 'rgb(var(--color-gray-400) / <alpha-value>)',
+					100: 'rgb(var(--color-gray-100) / <alpha-value>)',
+				},
+      },
+      height: {
+				nav: 'calc(100vh - 96px);',
+			},
     },
   },
   plugins: [],
