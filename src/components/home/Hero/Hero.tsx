@@ -1,6 +1,7 @@
 "use client"
 import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
+// @ts-ignore
 import Typed from 'typed.js';
 
 import Envelope from '@/assets/icons/envelope.svg';
