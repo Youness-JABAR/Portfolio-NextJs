@@ -45,8 +45,8 @@ const ContactForm = () => {
 			actions.resetForm();
 			recaptchaRef.current?.reset();
 		} catch (err) {
-			const message = formatAxiosResponse(err);
-			actions.setStatus(message);
+			// const message = formatAxiosResponse(err);
+			// actions.setStatus(message);
 		}
 	};
 
@@ -125,7 +125,7 @@ const ContactForm = () => {
 								onChange={(value) => {
 									setFieldValue('g-recaptcha-response', value);
 								}}
-								sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}
+								sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY!}
 							/>
 							{touched['g-recaptcha-response'] && errors['g-recaptcha-response'] && (
 								<FormControlError>{errors['g-recaptcha-response']}</FormControlError>

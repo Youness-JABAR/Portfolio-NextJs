@@ -6,8 +6,13 @@ const Background = () => {
       <Image
         src="/Youness_bg.png"
         alt="BackGround Image"
-        layout="fill" // Set layout to "fill" for full-width and full-height image
-        objectFit="cover" // Set objectFit to "cover" to maintain aspect ratio and cover the entire container
+        sizes="100vw"
+        fill={true}
+        className='w-fit'
+        style={{
+          width: '100%',
+          objectFit:'cover'
+        }}
         priority // Add priority to preload the image
       />
     </div>
