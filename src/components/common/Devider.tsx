@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 export interface DividerProps extends HTMLAttributes<HTMLSpanElement> {
 	length?: number;
 }
-const Divider: FC<DividerProps> = ({ length, className, ...rest }) => {
+const Divider: FC<DividerProps> = ({ length = 80, className, ...rest }) => {
 	return (
 		<div
 			style={{
@@ -15,10 +15,6 @@ const Divider: FC<DividerProps> = ({ length, className, ...rest }) => {
 			{...rest}
 		></div>
 	);
-};
-
-Divider.defaultProps = {
-	length: 80,
 };
 
 export { Divider };

@@ -54,7 +54,7 @@ const Projects: React.FC<HeroProps> = () => {
                     technologies="Technologies: UML, MySQL, JS, HTML, Bootstrap, php."
                 />
                 <ProjectCard
-                    imageUrl="/images/projects/fee.png"
+                    imageUrl="/images/projects/FEE.png"
                     title="FEE7"
                     description="Realization of a mobile application: forum ENSAK Enterprise."
                     technologies="Technologies: UML, AdobeXD, Java, Android Studio, Firebase, Git."

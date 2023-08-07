@@ -6,8 +6,8 @@ import { Input } from '@/components/common/Form/Input';
 import { Textarea } from '@/components/common/Form/Textarea';
 import { Form, Formik, FormikHelpers } from 'formik';
 import { ZodError, z } from 'zod';
-// import axios from 'axios';
-// import { formatAxiosResponse } from 'helpers/formatAxiosResponse';
+import axios from 'axios';
+import { formatAxiosResponse } from '@/helpers/formatAxiosResponse';
 import { ChangeEvent, useRef, useState } from 'react';
 import { SuccessMessage } from './SuccessMessage';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -37,16 +37,16 @@ const ContactForm = () => {
 	const handleSubmit = async (values: ContactMessage, actions: FormikHelpers<ContactMessage>) => {
 		try {
 			setFormSubmitted(false);
-			// await axios('/api/contact', {
-			// 	method: 'POST',
-			// 	data: values,
-			// });
+			await axios('/api/contact', {
+				method: 'POST',
+				data: values,
+			});
 			setFormSubmitted(true);
 			actions.resetForm();
 			recaptchaRef.current?.reset();
 		} catch (err) {
-			// const message = formatAxiosResponse(err);
-			// actions.setStatus(message);
+			const message = formatAxiosResponse(err);
+			actions.setStatus(message);
 		}
 	};
 
@@ -117,7 +117,7 @@ const ContactForm = () => {
 								value={values.message}
 							/>
 						</FormGroup>
-						{formSubmitted && <SuccessMessage>Your message has been sent</SuccessMessage>}
+						{formSubmitted && <SuccessMessage>Your message has been sent successfully.</SuccessMessage>}
 						<FormGroup className="items-end w-full mt-4">
 							<ReCAPTCHA
 								size="invisible"
@@ -126,8 +126,8 @@ const ContactForm = () => {
 									setFieldValue('g-recaptcha-response', value);
 								}}
 								sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY!}
-							/>
-							{touched['g-recaptcha-response'] && errors['g-recaptcha-response'] && (
+							/> 
+							 {touched['g-recaptcha-response'] && errors['g-recaptcha-response'] && (
 								<FormControlError>{errors['g-recaptcha-response']}</FormControlError>
 							)}
 						</FormGroup>
