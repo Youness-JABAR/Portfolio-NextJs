@@ -22,12 +22,12 @@ const Skills: React.FC = () => {
         <SkillCard src='images/skills/angular.svg' alt="Angular" title="Angular" />
         <SkillCard src='images/skills/vuejs.svg' alt="Vuejs" title="Vuejs" />
         <SkillCard src='images/skills/getbootstrap.svg' alt="Bootstrap" title="Bootstrap" />
-        <SkillCard src='images/skills/tailwind.svg' alt="TailwindCss" title="TailwindCss" />
+        <SkillCard src='images/skills/Tailwind.svg' alt="TailwindCss" title="TailwindCss" />
         <SkillCard src='images/skills/nodejs.svg' alt="Node.js" title="Node.js" />
         <SkillCard src='images/skills/django.svg' alt="Django" title="Django" />
         <SkillCard src='images/skills/laravel.svg' alt="Laravel" title="Laravel" />
         <SkillCard src='images/skills/git.svg' alt="Git" title="Git" />
-        <SkillCard src='images/skills/vercel.svg' alt="Vercel" title="Vercel" />
+        <SkillCard src='images/skills/Vercel.svg' alt="Vercel" title="Vercel" />
         <SkillCard src='images/skills/graphql.svg' alt="Graphql" title="GraphQL" />
         <SkillCard src='images/skills/firebase.svg' alt="Firebase" title="Firebase" />
         <SkillCard src='images/skills/opencv.svg' alt="Opencv" title="OpenCV" />
