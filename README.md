@@ -1,36 +1,72 @@
-# Portfolio NextJs
+# Portfolio - Nextjs
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Welcome to the README for **My Portfolio**, a personal portfolio project. This README provides an overview of the project structure, dependencies, and available scripts.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#Features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Available Scripts](#available-scripts)
+
+## Introduction
+
+**My Portfolio** is a personal portfolio project aimed at showcasing your skills, projects, and experiences. It's built using [Next.js](https://nextjs.org/), a React framework for building efficient and scalable web applications.
+
+## Features
+
+- Typescript
+- Strongly typed.
+- Smooth animation using framer-motion
+- Well SEO optimized and performant (with a score between 95 - 100)
+- Sendgrid Support to receive emails from the contact form
+- Built-in Route Handler (you do not need a custom backend)
+- Formik integration.
+- Zod TypeScript-first schema validation
+- Clsx a tiny (234B) utility for constructing className strings conditionally.
+- Responsive design
+- Built-in color generator (but you can still add your own).
+- Very customizable.
+- Code well organized, Customizable, and scalable.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Before you begin, make sure you have the following software installed:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) (normally comes with Node.js installation)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository:
 
-## Learn More
+   ```bash
+   git clone https://github.com/Youness-JABAR/Portfolio-NextJs.git
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Navigate to the project directory:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   cd Portfolio-NextJs
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Install the project dependencies:
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Available Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+In the project directory, you can run the following scripts:
+
+- `npm run dev`: Starts the development server.
+- `npm run build`: Builds the production-ready application.
+- `npm start`: Starts the production server (after running `npm run build`).
+- `npm run lint`: Lints the project using ESLint.
+
+Thank you for checking out **My Portfolio**! I hope you find it useful for showcasing your skills and experiences.
