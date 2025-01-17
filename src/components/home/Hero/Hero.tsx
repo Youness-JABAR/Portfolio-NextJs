@@ -40,7 +40,7 @@ const Hero: React.FC<HeroProps> = () => {
               
              <span ref={typedRef} className="pl-1" data-typed-items=" Youness JABAR, A Full Stack Developer, A Software Engineer"></span>
           </h1>
-          <p className=" tracking-[.1em] text-xl mt-0 mb-8 capitalize text-white bg-black font-medium w-fit"> Full Stack Developer, AI lover</p>
+          <p className=" tracking-[.1em] text-xl mt-0 mb-8 capitalize text-white bg-black font-medium w-fit"> Full Stack Developer, AI Specialist</p>
 
           <ul className="list-unstyled ">
             <li className='float-left mr-5'>
