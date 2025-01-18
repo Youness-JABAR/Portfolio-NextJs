@@ -9,18 +9,18 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Youness JABAR Portfolio",
+  title: "Youness JABAR - Full-Stack Developer | AI Enthusiast",
   description:
-    "I'm a web Developer And Ai lover, Worked on various types of projects and I'm confident you'll enjoy working with me.",
+    "Hi, I'm Youness Jabar, a full-stack developer and AI enthusiast specializing in React, Angular, Laravel, and AI-driven solutions. Explore my projects and experience.",
   icons: {
     icon: "/favicon.png",
   },
   openGraph: {
-    title: "Youness JABAR Portfolio",
+    title: "Youness JABAR - Full-Stack Developer | AI Enthusiast",
     description:
-      "I'm a web Developer And Ai lover, Worked on various types of projects and I'm confident you'll enjoy working with me.",
+      "Hi, I'm Youness Jabar, a full-stack developer and AI enthusiast specializing in React, Angular, Laravel, and AI-driven solutions. Explore my projects and experience.",
     url: "https://youness-jabar.vercel.app/",
-    siteName: "youness-jabar",
+    siteName: "Youness Jabar Portfolio",
     images: [
       {
         url: "/favicon.png",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Youness JABAR Portfolio",
+    title: "Youness JABAR - Full-Stack Developer | AI Enthusiast",
     description:
-      "I'm a web Developer And Ai lover, Worked on various types of projects and I'm confident you'll enjoy working with me.",
+      "Hi, I'm Youness Jabar, a full-stack developer and AI enthusiast specializing in React, Angular, Laravel, and AI-driven solutions. Explore my projects and experience.",
     site: "@youness-jabar",
     // creator: '@yourusername',
     images: ["/favicon.png"],
