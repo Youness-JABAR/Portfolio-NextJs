@@ -1,18 +1,22 @@
-import { AnchorHTMLAttributes, FC } from 'react';
-import clsx from 'clsx';
+import { AnchorHTMLAttributes, FC } from "react";
+import clsx from "clsx";
 
-const SocialLink: FC<AnchorHTMLAttributes<HTMLAnchorElement>> = ({ children, className, ...rest }) => {
-	return (
-		<a
-			className={clsx(
-				'hover:text-primary transition-all duration-[0.5s] ease-[ease-in-out] delay-[0s] ',
-				className,
-			)}
-			{...rest}
-		>
-			{children}
-		</a>
-	);
+const SocialLink: FC<AnchorHTMLAttributes<HTMLAnchorElement>> = ({
+  children,
+  className,
+  ...rest
+}) => {
+  return (
+    <a
+      className={clsx(
+        "hover:text-primary text-gray-600 transition-all duration-300 ease-in-out",
+        className
+      )}
+      {...rest}
+    >
+      {children}
+    </a>
+  );
 };
 
 export { SocialLink };

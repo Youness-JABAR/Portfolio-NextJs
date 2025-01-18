@@ -1,144 +1,139 @@
-"use client"
-import { Button } from '@/components/common/Buttons/Button';
-import { FormGroup } from '@/components/common/Form/FormGroup';
-import { FormLabel } from '@/components/common/Form/FormLabel';
-import { Input } from '@/components/common/Form/Input';
-import { Textarea } from '@/components/common/Form/Textarea';
-import { Form, Formik, FormikHelpers } from 'formik';
-import { ZodError, z } from 'zod';
-import axios from 'axios';
-import { formatAxiosResponse } from '@/helpers/formatAxiosResponse';
-import { ChangeEvent, useRef, useState } from 'react';
-import { SuccessMessage } from './SuccessMessage';
-import ReCAPTCHA from 'react-google-recaptcha';
-import { FormControlError } from '@/components/common/Form/FormControlError';
+"use client";
+import { Button } from "@/components/common/Buttons/Button";
+import { FormGroup } from "@/components/common/Form/FormGroup";
+import { FormLabel } from "@/components/common/Form/FormLabel";
+import { Input } from "@/components/common/Form/Input";
+import { Textarea } from "@/components/common/Form/Textarea";
+import { Form, Formik, FormikHelpers } from "formik";
+import { ZodError, z } from "zod";
+import axios from "axios";
+import { useState } from "react";
+import { SuccessMessage } from "./SuccessMessage";
 
 const initialValues = {
-	name: '',
-	email: '',
-	subject: '',
-	message: '',
-	'g-recaptcha-response': '',
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
 };
-
 export type ContactMessage = typeof initialValues;
 
 const Schema = z.object({
-	name: z.string().min(1, 'Name is required'),
-	email: z.string().email(),
-	subject: z.string().min(1, 'Subject is required'),
-	message: z.string().min(10, 'The message should be at least 10 characters'),
-	'g-recaptcha-response': z.string().min(1, 'Captcha error, Please refresh the page and try again'),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email format"),
+  subject: z.string().min(1, "Subject is required"),
+  message: z.string().min(10, "The message should be at least 10 characters"),
 });
 
 const ContactForm = () => {
-	const [formSubmitted, setFormSubmitted] = useState(false);
-	const recaptchaRef = useRef<ReCAPTCHA>(null);
-	const handleSubmit = async (values: ContactMessage, actions: FormikHelpers<ContactMessage>) => {
-		try {
-			setFormSubmitted(false);
-			await axios('/api/contact', {
-				method: 'POST',
-				data: values,
-			});
-			setFormSubmitted(true);
-			actions.resetForm();
-			recaptchaRef.current?.reset();
-		} catch (err) {
-			const message = formatAxiosResponse(err);
-			actions.setStatus(message);
-		}
-	};
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
-	return (
-		<Formik
-			initialValues={initialValues}
-			validate={(values) => {
-				try {
-					Schema.parse(values);
-				} catch (errors) {
-					return (errors as ZodError).formErrors.fieldErrors;
-				}
-			}}
-			onSubmit={handleSubmit}
-		>
-			{({ values, setFieldValue, handleChange, handleBlur, errors, touched, isSubmitting, status }) => {
-				const _handleChange = (e: ChangeEvent<HTMLElement>) => {
-					if (!values['g-recaptcha-response'] && recaptchaRef.current) {
-						recaptchaRef.current.execute();
-					}
-					handleChange(e);
-				};
-				return (
-					<Form className="flex flex-wrap">
-						{status && <p className="w-full p-4 mb-6 leading-4 text-white bg-error/90">{status}</p>}
-						<FormGroup className="w-full mb-4 sm:pr-2 sm:w-1/2">
-							<FormLabel>Your name</FormLabel>
-							<Input
-								onChange={_handleChange}
-								onBlur={handleBlur}
-								name="name"
-								placeholder="What should i call you ?"
-								error={touched.name ? errors.name : ''}
-								value={values.name}
-							/>
-						</FormGroup>
-						<FormGroup className="w-full mb-4 sm:pl-2 sm:w-1/2">
-							<FormLabel>Your email</FormLabel>
-							<Input
-								onChange={_handleChange}
-								onBlur={handleBlur}
-								name="email"
-								type="email"
-								placeholder="Where can i reach you ?"
-								error={touched.email ? errors.email : ''}
-								value={values.email}
-							/>
-						</FormGroup>
-						<FormGroup className="w-full mb-4">
-							<FormLabel>Subject</FormLabel>
-							<Input
-								onChange={_handleChange}
-								onBlur={handleBlur}
-								name="subject"
-								placeholder="What is the subject of your message?"
-								error={touched.subject ? errors.subject : ''}
-								value={values.subject}
-							/>
-						</FormGroup>
-						<FormGroup className="w-full mb-4">
-							<FormLabel>Message</FormLabel>
-							<Textarea
-								onChange={_handleChange}
-								onBlur={handleBlur}
-								name="message"
-								placeholder="What is your message ?"
-								error={touched.message ? errors.message : ''}
-								value={values.message}
-							/>
-						</FormGroup>
-						{formSubmitted && <SuccessMessage>Your message has been sent successfully.</SuccessMessage>}
-						<FormGroup className="items-end w-full mt-4">
-							<ReCAPTCHA
-								size="invisible"
-								ref={recaptchaRef}
-								onChange={(value) => {
-									setFieldValue('g-recaptcha-response', value);
-								}}
-								sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY!}
-							/> 
-							 {touched['g-recaptcha-response'] && errors['g-recaptcha-response'] && (
-								<FormControlError>{errors['g-recaptcha-response']}</FormControlError>
-							)}
-						</FormGroup>
-						<Button isLoading={isSubmitting} className="mt-16 ml-auto" type="submit">
-							Send message
-						</Button>
-					</Form>
-				);
-			}}
-		</Formik>
-	);
+  const handleSubmit = async (
+    values: typeof initialValues,
+    actions: FormikHelpers<typeof initialValues>
+  ) => {
+    try {
+      setFormSubmitted(false);
+      await axios.post("/api/contact", values); // Sending data to the API endpoint
+      setFormSubmitted(true);
+      actions.resetForm();
+    } catch (err) {
+      actions.setStatus("Failed to send your message. Please try again later.");
+    }
+  };
+
+  return (
+    <Formik
+      initialValues={initialValues}
+      validate={(values) => {
+        try {
+          Schema.parse(values);
+        } catch (errors) {
+          return (errors as ZodError).formErrors.fieldErrors;
+        }
+      }}
+      onSubmit={handleSubmit}
+    >
+      {({
+        values,
+        handleChange,
+        handleBlur,
+        errors,
+        touched,
+        isSubmitting,
+        status,
+      }) => (
+        <Form className="flex flex-wrap">
+          {status && (
+            <p className="w-full p-4 mb-6 text-white bg-red-500 rounded">
+              {status}
+            </p>
+          )}
+          <FormGroup className="w-full mb-4 sm:pr-2 sm:w-1/2">
+            <FormLabel htmlFor="name">Your name</FormLabel>
+            <Input
+              id="name"
+              name="name"
+              placeholder="What should I call you?"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.name}
+              error={touched.name ? errors.name : ""}
+            />
+          </FormGroup>
+          <FormGroup className="w-full mb-4 sm:pl-2 sm:w-1/2">
+            <FormLabel htmlFor="email">Your email</FormLabel>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Where can I reach you?"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.email}
+              error={touched.email ? errors.email : ""}
+            />
+          </FormGroup>
+          <FormGroup className="w-full mb-4">
+            <FormLabel htmlFor="subject">Subject</FormLabel>
+            <Input
+              id="subject"
+              name="subject"
+              placeholder="What is the subject of your message?"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.subject}
+              error={touched.subject ? errors.subject : ""}
+            />
+          </FormGroup>
+          <FormGroup className="w-full mb-4">
+            <FormLabel htmlFor="message">Message</FormLabel>
+            <Textarea
+              id="message"
+              name="message"
+              placeholder="What is your message?"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.message}
+              error={touched.message ? errors.message : ""}
+            />
+          </FormGroup>
+          {formSubmitted && (
+            <SuccessMessage>
+              Your message has been sent successfully.
+            </SuccessMessage>
+          )}
+          <Button
+            isLoading={isSubmitting}
+            className="mt-8 mx-auto"
+            type="submit"
+          >
+            Send message
+          </Button>
+        </Form>
+      )}
+    </Formik>
+  );
 };
 
 export { ContactForm };

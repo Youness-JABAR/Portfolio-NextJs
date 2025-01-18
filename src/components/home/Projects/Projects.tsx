@@ -1,70 +1,62 @@
-"use client"
-import Link from 'next/link';
-import React, { useEffect, useRef } from 'react';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import ProjectCard from "./ProjectCard";
 
-
-import Envelope from '@/assets/icons/envelope.svg';
-import Github from '@/assets/icons/social-media/Github.svg';
-import LinkedIn from '@/assets/icons/social-media/Linkedin.svg';
-import ArrowUpRight from '@/assets/icons/link.svg'
-import ProjectCard from './ProjectCard';
-
-interface HeroProps {}
-
-const Projects: React.FC<HeroProps> = () => {
-
-
+const Projects: React.FC = () => {
   return (
-    <section id="projects" className="w-full h-auto bg-gray-100 pt-24 pb-24">
+    <section id="projects" className="w-full h-auto bg-gray-50 py-24">
+      <div className="max-w-[1140px] mx-auto text-center">
+        {/* Section Title */}
+        <h2 className="text-4xl font-bold uppercase text-gray-800 mb-4">
+          Projects
+        </h2>
+        <p className="text-lg text-gray-600 mb-12">
+          A showcase of some of the personal projects I've worked on, combining
+          my skills in development and design.
+        </p>
 
-        <div className=" xl:max-w-[1140px]  lg:max-w-[960px]  md:max-w-[720px] sm:max-w-[540px] w-full  mx-auto text-center flex items-center justify-center">
-          <div className="mb-16 text-center">
-            <h2 className='text-2xl font-semibold uppercase'>Projects</h2>
-          </div>
-        </div>
-        <div className=" xl:max-w-[1140px]  lg:max-w-[960px]  md:max-w-[720px] sm:max-w-[540px] w-full  mx-auto text-center flex items-center justify-center">
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-full">
-                <ProjectCard
-                    imageUrl="/images/projects/morartist.png"
-                    link="https://www.morartist.com"
-                    title="Morartist.com"
-                    description="Realization of a Website for selling portraits (two versions Angular/NextJs)."
-                    technologies="Technologies: Angular, Bootstrap / NextJs, Tailwindcss, Vercel."
-                />
-                
-                <ProjectCard
-                    imageUrl="/images/projects/fitness.png"
-                    link="https://www.FitnessCalcAdvisor.com"
-                    title="FitnessCalcAdvisor.com"
-                    description="Realization of a website SEO Optimized for fitness calculations and advices."
-                    technologies="Technologies: NextJs, Tailwindcss, Vercel."
-                />
+        {/* Project Cards */}
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+          <ProjectCard
+            imageUrl="/images/projects/morartist.png"
+            link="https://morartist-frontend.vercel.app/"
+            title="Morartist.com"
+            description="Realization of a Website for selling portraits (two versions Angular/NextJs)."
+            technologies="Technologies: Angular, Bootstrap / NextJs, Tailwindcss, Vercel."
+          />
 
-                <ProjectCard
-                    imageUrl="/images/projects/maboursev2.png"
-                    title="MABOURSE"
-                    description="Design and production of the second version of the MABOURSE website."
-                    technologies="Technologies: Html, Css, Boostrap, JS, Django."
-                />
-                <ProjectCard
-                    imageUrl="/images/projects/ecommerce.png"
-                    title="Tal-3andak"
-                    description="Realization of an E-commerce website for online purchase from the supermarkets available in Kenitra."
-                    technologies="Technologies: UML, MySQL, JS, HTML, Bootstrap, php."
-                />
-                <ProjectCard
-                    imageUrl="/images/projects/FEE.png"
-                    title="FEE7"
-                    description="Realization of a mobile application: forum ENSAK Enterprise."
-                    technologies="Technologies: UML, AdobeXD, Java, Android Studio, Firebase, Git."
-                />
-            </div>
+          <ProjectCard
+            imageUrl="/images/projects/fitness.png"
+            link="https://www.FitnessCalcAdvisor.com"
+            title="FitnessCalcAdvisor.com"
+            description="Realization of a website SEO Optimized for fitness calculations and advices."
+            technologies="Technologies: NextJs, Tailwindcss, Vercel."
+          />
+
+          <ProjectCard
+            imageUrl="/images/projects/maboursev2.png"
+            title="MABOURSE"
+            description="Design and production of the second version of the MABOURSE website."
+            technologies="Technologies: HTML, CSS, Bootstrap, JS, Django."
+          />
+
+          <ProjectCard
+            imageUrl="/images/projects/ecommerce.png"
+            title="Tal-3andak"
+            description="Realization of an E-commerce website for online purchase from the supermarkets available in Kenitra."
+            technologies="Technologies: UML, MySQL, JS, HTML, Bootstrap, PHP."
+          />
+
+          <ProjectCard
+            imageUrl="/images/projects/FEE.png"
+            title="FEE7"
+            description="Realization of a mobile application: forum ENSAK Enterprise."
+            technologies="Technologies: UML, AdobeXD, Java, Android Studio, Firebase, Git."
+          />
         </div>
+      </div>
     </section>
   );
 };
 
 export default Projects;
-
-

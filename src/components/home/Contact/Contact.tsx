@@ -1,34 +1,48 @@
-import React from 'react';
-import { ContactForm } from './ContactForm';
+import React from "react";
+import { ContactForm } from "./ContactForm";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="w-full h-auto bg-white pt-24 pb-24">
-      
-      <div className=" xl:max-w-[1140px]  lg:max-w-[960px]  md:max-w-[720px] sm:max-w-[540px] w-full  mx-auto text-center flex items-center justify-center">
-        <div className="grid grid-cols-2 gap-24">
-          <div className="lg:col-span-1 col-span-2  ">
-          <div className=" max-w-[80%] text-left my-6 text-[#736f6f] text-[15px]  leading-5 tracking-[0.02em]">
+    <section id="contact" className="w-full h-auto  py-24">
+      <div className="max-w-[1140px] mx-auto text-center">
+        {/* Section Header */}
+        <h2 className="text-4xl font-bold uppercase text-white mb-4">
+          Get in Touch
+        </h2>
+        <p className="text-lg text-white mb-12">
+          Feel free to reach out to discuss projects, opportunities, or just to
+          say hi!
+        </p>
 
-              
-              <div>
-
-                <h2 className="mb-3 text-black font-semibold text-2xl ">GET IN TOUCH</h2>
-
-                <ul >
-                  <li className='pb-3'><span>Rabat, Morocco</span></li>
-                  <li className='pb-3'><span>+212 628938972</span></li>
-                  <li className='pb-3'><a href="mailto:youness.jabar.pro@gmail.com" > <span>youness.jabar.pro@gmail.com</span></a> </li>
-                </ul>
-
-              </div>
-            </div>
+        {/* Contact Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Information */}
+          <div className="text-left">
+            <ul className="space-y-6">
+              <li className="flex items-center text-lg text-white">
+                <FaMapMarkerAlt className="text-blue-600 mr-3" />
+                Rabat, Morocco
+              </li>
+              <li className="flex items-center text-lg text-white">
+                <FaPhoneAlt className="text-blue-600 mr-3" />
+                +212 628938972
+              </li>
+              <li className="flex items-center text-lg text-white">
+                <FaEnvelope className="text-blue-600 mr-3" />
+                <a
+                  href="mailto:youness.jabar.pro@gmail.com"
+                  className="hover:underline"
+                >
+                  youness.jabar.pro@gmail.com
+                </a>
+              </li>
+            </ul>
           </div>
 
-          <div className="lg:col-span-1 col-span-2">
-            <div className="about-descr">
+          {/* Contact Form */}
+          <div>
             <ContactForm />
-            </div>
           </div>
         </div>
       </div>

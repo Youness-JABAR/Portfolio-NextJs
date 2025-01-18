@@ -22,6 +22,7 @@ module.exports = {
         primary: 'rgb(var(--color-primary) / <alpha-value>)',
         error: 'rgb(var(--color-error) / <alpha-value>)',
 				success: 'rgb(var(--color-success) / <alpha-value>)',
+        blue:"#102852",
         gray: {
 					400: 'rgb(var(--color-gray-400) / <alpha-value>)',
 					100: 'rgb(var(--color-gray-100) / <alpha-value>)',

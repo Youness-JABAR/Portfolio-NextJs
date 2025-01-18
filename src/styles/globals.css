@@ -2,16 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
-	--color-primary: 39 111 208;
-	--color-error: 255 61 61;
-	--color-success: 65 171 92;
-    --color-gray-400: 137 137 137;
-	--color-gray-100: 247 247 247;
+  --color-primary: 39 111 208;
+  --color-error: 255 61 61;
+  --color-success: 65 171 92;
+  --color-gray-400: 137 137 137;
+  --color-gray-100: 247 247 247;
+  --font-primary: "Poppins", sans-serif; /* Primary font */
+}
+body {
+  font-family: var(--font-primary);
+  background-color: rgb(
+    var(--color-gray-100)
+  ); /* Light background for readability */
+  color: rgb(34, 34, 34); /* Default text color */
+  line-height: 1.6; /* Improve readability */
 }
 
 .grecaptcha-badge {
-	display: none !important;
+  display: none !important;
 }

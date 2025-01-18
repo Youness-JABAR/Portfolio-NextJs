@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 const FormLabel: FC<LabelHTMLAttributes<HTMLLabelElement>> = ({ children, className, ...rest }) => {
 	return (
-		<label className={clsx('text-xl font-semibold mb-4', className)} {...rest}>
+		<label className={clsx('text-xl font-semibold mb-4 text-white', className)} {...rest}>
 			{children}
 		</label>
 	);

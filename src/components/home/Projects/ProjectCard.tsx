@@ -1,35 +1,60 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import ArrowUpRight from '@/assets/icons/link.svg'
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import ArrowUpRight from "@/assets/icons/link.svg";
 
 interface ProjectCardProps {
-    imageUrl: string;
-    link?: string;
-    title: string;
-    description: string;
-    technologies: string;
-  }
-  
-  const ProjectCard: React.FC<ProjectCardProps> = ({ imageUrl, link, title, description, technologies }) => {
-   return (
-    <div className="col-span-1 mx-2">
+  imageUrl: string;
+  link?: string;
+  title: string;
+  description: string;
+  technologies: string;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  imageUrl,
+  link,
+  title,
+  description,
+  technologies,
+}) => {
+  return (
+    <div className="col-span-1 mx-2 hover:shadow-lg hover:scale-105 transition-transform duration-300 rounded-lg overflow-hidden bg-white">
       <div className="relative">
-        <Image src={imageUrl} width={355} height={166} className="w-full" alt="img" />
-        <div className="relative px-0 py-[25px] text-left">
+        {/* Project Image */}
+        <Image
+          src={imageUrl}
+          width={355}
+          height={166}
+          className="w-full h-48 object-cover rounded-t-lg"
+          alt={`Image of ${title}`}
+        />
+
+        {/* Project Details */}
+        <div className="p-4 text-left">
+          {/* Project Title */}
           {link ? (
-            <Link href={link} target="_blank" className="inline-flex items-center">
-                <h4 className="font-semibold">
-                  {title} <ArrowUpRight className="w-4 h-4 mr-2 inline" />
-                </h4>
+            <Link
+              href={link}
+              target="_blank"
+              className="inline-flex items-center"
+            >
+              <h4 className="font-semibold text-lg text-blue-600 hover:underline">
+                {title} <ArrowUpRight className="w-4 h-4 ml-1 inline" />
+              </h4>
             </Link>
           ) : (
-            <h4 className="font-semibold">{title}</h4>
+            <h4 className="font-semibold text-lg text-gray-800">{title}</h4>
           )}
-          <p className="text-sm leading-6">{description}</p>
 
-          <hr className="border-[1px] my-6" />
-          <p className="text-[#736f6f] text-[15px] leading-5 tracking-[0.02em]">{technologies}</p>
+          {/* Project Description */}
+          <p className="text-sm text-gray-600 mt-2">{description}</p>
+
+          {/* Divider */}
+          <hr className="border-gray-300 my-4" />
+
+          {/* Technologies */}
+          <p className="text-sm text-gray-500 italic">{technologies}</p>
         </div>
       </div>
     </div>

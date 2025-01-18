@@ -1,65 +1,75 @@
-"use client"
-import Link from 'next/link';
-import React, { useEffect, useRef } from 'react';
-// @ts-ignore
-import Typed from 'typed.js';
+"use client";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import React from "react";
 
-import Envelope from '@/assets/icons/envelope.svg';
-import Github from '@/assets/icons/social-media/Github.svg';
-import LinkedIn from '@/assets/icons/social-media/Linkedin.svg';
+import Envelope from "@/assets/icons/envelope.svg";
+import Github from "@/assets/icons/social-media/Github.svg";
+import LinkedIn from "@/assets/icons/social-media/Linkedin.svg";
 
 interface HeroProps {}
 
 const Hero: React.FC<HeroProps> = () => {
-  const typedRef = useRef<HTMLSpanElement>(null); // Create a ref for the typed element
-
-  useEffect(() => {
-    const typedElement = typedRef.current;
-
-    if (typedElement) {
-      let typed_strings = typedElement.getAttribute('data-typed-items');
-      if (typed_strings) {
-        const stringsArray = typed_strings.split(',');
-        new Typed(typedElement, {
-          strings: stringsArray,
-          loop: true,
-          typeSpeed: 100,
-          backSpeed: 50,
-          backDelay: 2000,
-        });
-      }
-    }
-  }, []);
-
   return (
-    <div id="hero" className="w-full h-fit">
-      <div className=" xl:max-w-[1140px]  lg:max-w-[960px]  md:max-w-[720px] sm:max-w-[540px] w-full  mx-auto text-center flex items-center justify-center">
-        <div className="h-screen text-left w-full flex justify-center flex-col">
-          <h1 className=" bg-white font-bold mb-3 uppercase  text-5xl w-fit">
-            <span className='pr-2'> I'm</span>
-              
-             <span ref={typedRef} className="pl-1" data-typed-items=" Youness JABAR, A Full Stack Developer, A Software Engineer"></span>
-          </h1>
-          <p className=" tracking-[.1em] text-xl mt-0 mb-8 capitalize text-white bg-black font-medium w-fit"> Full Stack Developer, AI Specialist</p>
+    <div
+      id="hero"
+      className="w-full h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 text-white flex items-center justify-center"
+    >
+      <div className="max-w-[1140px] mx-auto text-center flex flex-col items-center">
+        {/* Smooth Animated Heading */}
+        <motion.h1
+          className="font-bold text-5xl sm:text-6xl mb-4"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          I'm{" "}
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
+            className="text-[#4cc9f0]"
+          >
+            Youness JABAR
+          </motion.span>
+        </motion.h1>
 
-          <ul className="list-unstyled ">
-            <li className='float-left mr-5'>
-              <Link href="https://github.com/Youness-JABAR" target="_blank">
-                <Github className="w-10 h-10 mr-2 sm:w-8 sm:h-8 text-white"  />
-              </Link>
-            </li>
-            <li className='float-left mr-5'>
-              <Link href="mailto:youness.jabar.pro@gmail.com" target="_blank">
-                <Envelope className="w-10 h-10 mr-2 sm:w-8 sm:h-8 text-white text-3xl"  />
-              </Link>
-            </li>
-            <li className='float-left mr-5'>
-              <Link href="https://www.linkedin.com/in/youness-jabar-b224841a3/" target="_blank">
-                <LinkedIn className="w-10 h-10 mr-2 sm:w-8 sm:h-8 text-white text-3xl"  />
-              </Link>
-            </li>
-          </ul>
-        </div>
+        {/* Subtitle with Animation */}
+        <motion.p
+          className="text-lg sm:text-xl mt-4 font-medium tracking-wide bg-black bg-opacity-50 px-4 py-2 rounded-md"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1 }}
+        >
+          Full Stack Developer | AI Specialist
+        </motion.p>
+
+        {/* Social Links */}
+        <motion.ul
+          className="flex mt-8 space-x-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.5 }}
+        >
+          <li>
+            <Link href="https://github.com/Youness-JABAR" target="_blank">
+              <Github className="w-10 h-10 sm:w-12 sm:h-12 hover:scale-110 transition-transform" />
+            </Link>
+          </li>
+          <li>
+            <Link href="mailto:youness.jabar.pro@gmail.com" target="_blank">
+              <Envelope className="w-10 h-10 sm:w-12 sm:h-12 hover:scale-110 transition-transform" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://www.linkedin.com/in/youness-jabar-b224841a3/"
+              target="_blank"
+            >
+              <LinkedIn className="w-10 h-10 sm:w-12 sm:h-12 hover:scale-110 transition-transform" />
+            </Link>
+          </li>
+        </motion.ul>
       </div>
     </div>
   );

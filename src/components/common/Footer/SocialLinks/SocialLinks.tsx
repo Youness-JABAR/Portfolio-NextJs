@@ -1,28 +1,26 @@
-"use client"
-import Link from 'next/link';
-import React, { useEffect, useRef } from 'react';
-
-import { socialLinks } from '@/data/socialLinks';
-import { SocialLink } from './SocialLink';
+"use client";
+import React from "react";
+import { socialLinks } from "@/data/socialLinks";
+import { SocialLink } from "./SocialLink";
 
 interface SocialLinksProps {}
 
 const SocialLinks: React.FC<SocialLinksProps> = () => {
-
-
-
   return (
-    <ul className="flex justify-center my-5 ">
-      {socialLinks.map((sLink,i)=>(
-        <li className='float-left mr-5' key={i}>
-        <SocialLink href={sLink.destination} target="_blank" rel="noreferrer" title={sLink.title}>
-          {sLink.icon}
-        </SocialLink>
-      </li>
-        
+    <ul className="flex justify-center space-x-6 my-5">
+      {socialLinks.map((sLink, i) => (
+        <li key={i}>
+          <SocialLink
+            href={sLink.destination}
+            target="_blank"
+            rel="noreferrer"
+            title={sLink.title}
+            className="hover:scale-110 transform transition-transform duration-300"
+          >
+            {sLink.icon}
+          </SocialLink>
+        </li>
       ))}
-            
-        
     </ul>
   );
 };
