@@ -21,37 +21,37 @@ const Projects: React.FC = () => {
             imageUrl="/images/projects/morartist.png"
             link="https://morartist-frontend.vercel.app/"
             title="Morartist.com"
-            description="Realization of a Website for selling portraits (two versions Angular/NextJs)."
-            technologies="Technologies: Angular, Bootstrap / NextJs, Tailwindcss, Vercel."
+            description="Selling portraits application"
+            technologies="Next.js, TailwindCSS"
           />
 
           <ProjectCard
             imageUrl="/images/projects/fitness.png"
             link="https://www.FitnessCalcAdvisor.com"
             title="FitnessCalcAdvisor.com"
-            description="Realization of a website SEO Optimized for fitness calculations and advices."
-            technologies="Technologies: NextJs, Tailwindcss, Vercel."
+            description="Fitness calculation and advice website"
+            technologies="Next.js, TailwindCSS"
           />
 
           <ProjectCard
             imageUrl="/images/projects/maboursev2.png"
             title="MABOURSE"
-            description="Design and production of the second version of the MABOURSE website."
-            technologies="Technologies: HTML, CSS, Bootstrap, JS, Django."
+            description="Second version of MABOURSE website"
+            technologies="HTML, CSS, Bootstrap, Django"
           />
 
           <ProjectCard
             imageUrl="/images/projects/ecommerce.png"
             title="Tal-3andak"
-            description="Realization of an E-commerce website for online purchase from the supermarkets available in Kenitra."
-            technologies="Technologies: UML, MySQL, JS, HTML, Bootstrap, PHP."
+            description="E-commerce website for online purchases in Kenitra"
+            technologies="PHP, MySQL, HTML, Bootstrap"
           />
 
           <ProjectCard
             imageUrl="/images/projects/FEE.png"
             title="FEE7"
-            description="Realization of a mobile application: forum ENSAK Enterprise."
-            technologies="Technologies: UML, AdobeXD, Java, Android Studio, Firebase, Git."
+            description="Mobile app for ENSAK Enterprise Forum"
+            technologies="Java, Android Studio, Firebase"
           />
         </div>
       </div>
