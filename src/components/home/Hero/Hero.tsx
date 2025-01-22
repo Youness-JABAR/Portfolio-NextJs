@@ -6,6 +6,7 @@ import React from "react";
 import Envelope from "@/assets/icons/envelope.svg";
 import Github from "@/assets/icons/social-media/Github.svg";
 import LinkedIn from "@/assets/icons/social-media/Linkedin.svg";
+import { scrollIntoView } from "@/helpers/ScrollIntoView";
 
 interface HeroProps {}
 
@@ -79,12 +80,12 @@ const Hero: React.FC<HeroProps> = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          <Link
-            href="#contact"
-            className="bg-[#4cc9f0] text-blue-900 font-semibold py-3 px-6 rounded-lg hover:bg-[#4361ee] hover:text-white transition-colors duration-300"
+          <button
+              onClick={() => scrollIntoView("contact")}
+              className="bg-[#4cc9f0] text-blue-900 font-semibold py-3 px-6 rounded-lg hover:bg-[#4361ee] hover:text-white transition-colors duration-300"
           >
             Contact Me
-          </Link>
+          </button>
         </motion.div>
       </div>
     </div>

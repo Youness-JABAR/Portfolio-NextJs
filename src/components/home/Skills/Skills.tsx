@@ -42,7 +42,7 @@ const Skills: React.FC = () => {
               title="Angular"
             />
             <SkillCard
-              src="images/skills/tailwind.svg"
+              src="images/skills/Tailwind.svg"
               alt="TailwindCSS"
               title="TailwindCSS"
             />
