@@ -19,7 +19,20 @@ const About: React.FC = () => {
       <div className="max-w-[1140px] mx-auto grid lg:grid-cols-3 gap-16 items-center">
         {/* Profile Image */}
         <div className="lg:col-span-1">
-          <div className="border-[10px] border-blue-600 rounded-lg overflow-hidden shadow-lg">
+        <div className="lg:col-span-1 col-span-3">
+            <div className="lg:pb-8 p-0 border-solid border-[20px] border-blue">
+              <div className="about-img">
+                <Image
+                  height={2000}
+                  width={1500}
+                  src="/youness2025.jpeg"
+                  className="w-full lg:-mt-16 lg:ml-10 h-[400px] md:h-[600px] lg:h-[400px] object-cover drop-shadow-2xl"
+                  alt="Youness Jabar"
+                />
+              </div>
+            </div>
+          </div>
+          {/* <div className="border-[10px] border-blue-600 rounded-lg overflow-hidden shadow-lg">
             <Image
               height={400}
               width={400}
@@ -27,47 +40,34 @@ const About: React.FC = () => {
               className="object-cover"
               alt="Youness Jabar"
             />
-          </div>
+          </div> */}
         </div>
 
-        {/* About Text */}
-        <div className="lg:col-span-2 space-y-6 text-left">
-          <p
-            className={`text-lg text-gray-800 leading-relaxed ${playfair_Display.className}`}
-          >
-            Hi, I’m Youness Jabar, a software engineer with over 2.5 years of
-            experience building web applications. I hold a Bac +5 degree from{" "}
-            <strong className="text-blue-600">
-              ENSAK (National School of Applied Sciences in Kenitra)
-            </strong>, one of Morocco’s premier engineering schools. During my
-            studies, I participated in an enriching exchange program at the
-            University of Cordoba, Spain, gaining a global perspective on
-            technology and collaboration.
-          </p>
-
-          <p
-            className={`text-lg text-gray-800 leading-relaxed ${playfair_Display.className}`}
-          >
-            Currently, I’m working with{" "}
-            <strong className="text-blue-600">BEWIZYU</strong>, where I lead and
-            contribute to diverse projects using modern technologies like{" "}
-            <strong>Angular, React, Next.js, Laravel, and Node.js</strong>. My work
-            focuses on delivering scalable, user-centric applications while
-            ensuring seamless collaboration and problem-solving within the team.
-          </p>
-
-          <p
-            className={`text-lg text-gray-800 leading-relaxed ${playfair_Display.className}`}
-          >
-            I am deeply passionate about AI, 
-            digital marketing, and crafting seamless user
-            experiences. Whether it’s optimizing frontend performance or
-            tackling complex backend challenges, I am always ready to explore
-            new ideas and deliver impactful results.
-          </p>
+        {/* About Details */}
+        <div className="lg:col-span-2 text-left pl-8">
+          <ul className="space-y-4 text-lg text-gray-800 leading-relaxed">
+            <li>
+              🎓 I hold a Bac +5 degree from{" "}
+              <strong className="text-blue-600">
+                ENSAK (National School of Applied Sciences in Kenitra)
+              </strong>, one of Morocco’s premier engineering schools.
+            </li>
+            <li>
+              🌍 During my studies, I participated in an exchange program at the{" "}
+              <strong className="text-blue-600">University of Cordoba, Spain</strong>, gaining a global perspective on technology and collaboration.
+            </li>
+            <li>
+              💻 Currently, I’m working with{" "}
+              <strong className="text-blue-600">BEWIZYU</strong>, contributing to diverse projects using{" "}
+              <strong>Angular, React, Next.js, Laravel, and Node.js</strong>. My focus is on delivering scalable, user-centric applications and fostering seamless teamwork.
+            </li>
+            <li>
+              🤖 Passionate about <strong>AI</strong> and <strong>digital marketing</strong>, I strive to create seamless user experiences by optimizing frontend performance and solving complex backend challenges.
+            </li>
+          </ul>
 
           {/* Call to Action */}
-          <p className="mt-4 text-lg text-gray-700">
+          <p className="mt-8 text-lg text-gray-700">
             <a
               href="#contact"
               className="text-blue-600 font-semibold underline hover:no-underline hover:text-blue-800 transition-colors duration-300"

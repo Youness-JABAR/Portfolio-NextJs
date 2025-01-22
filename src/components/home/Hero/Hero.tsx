@@ -70,6 +70,22 @@ const Hero: React.FC<HeroProps> = () => {
             </Link>
           </li>
         </motion.ul>
+
+
+        {/* Call to Action Button */}
+        <motion.div
+          className="mt-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 2 }}
+        >
+          <Link
+            href="#contact"
+            className="bg-[#4cc9f0] text-blue-900 font-semibold py-3 px-6 rounded-lg hover:bg-[#4361ee] hover:text-white transition-colors duration-300"
+          >
+            Contact Me
+          </Link>
+        </motion.div>
       </div>
     </div>
   );
