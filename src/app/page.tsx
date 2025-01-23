@@ -1,6 +1,7 @@
 import Background from '@/components/common/Background'
 import Footer from '@/components/common/Footer/Footer'
 import Navbar from '@/components/common/Navbar/Navbar'
+import ScrollToTop from '@/components/common/ScrollToTop'
 import ViewOnGithub from '@/components/common/ViewOnGithub'
 import About from '@/components/home/About/About'
 import Contact from '@/components/home/Contact/Contact'
@@ -22,6 +23,8 @@ export default function Home() {
     <Contact/>
     <Footer/>
     <ViewOnGithub/>
+    <ScrollToTop />
+
     </>
   )
 }
