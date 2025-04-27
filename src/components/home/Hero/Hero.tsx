@@ -42,7 +42,7 @@ const Hero: React.FC<HeroProps> = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          Full Stack Developer | AI Specialist
+          Full Stack Developer | AI Enthusiast
         </motion.p>
 
         {/* Social Links */}
