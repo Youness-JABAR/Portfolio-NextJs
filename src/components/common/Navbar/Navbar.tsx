@@ -7,10 +7,13 @@ import { Toggler } from "./Toggler";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { scrollIntoView } from "@/helpers/ScrollIntoView";
+import { useLanguage } from "@/context/LanguageContext";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 
 interface Props {}
 
 const Navbar: FC<Props> = () => {
+  const { t } = useLanguage();
   const navRef = useRef<HTMLElement>(null);
   const [showMenu, setShowMenu] = useState(false);
   useEffect(() => {
@@ -74,17 +77,17 @@ const Navbar: FC<Props> = () => {
         >
           <NavItem showMenu={showMenu}>
             <NavLink to="about" activeClassName="text-primary font-bold">
-              About
+              {t.nav.about}
             </NavLink>
           </NavItem>
           <NavItem showMenu={showMenu} className="delay-150">
             <NavLink to="skills" activeClassName="text-primary font-bold">
-              Skills
+              {t.nav.skills}
             </NavLink>
           </NavItem>
           <NavItem showMenu={showMenu} className="delay-75">
             <NavLink to="projects" activeClassName="text-primary font-bold">
-              Projects
+              {t.nav.projects}
             </NavLink>
           </NavItem>
           <NavItem showMenu={showMenu} className="delay-200">
@@ -92,14 +95,17 @@ const Navbar: FC<Props> = () => {
               onClick={() => scrollIntoView("contact")}
               className="hover:bg-primary hover:text-white transition"
             >
-              Contact Me
+              {t.nav.contact}
             </Button>
           </NavItem>
         </ul>
-        <Toggler
-          showMenu={showMenu}
-          setShowMenu={() => setShowMenu(!showMenu)}
-        />
+        <div className="flex items-center gap-3">
+          <LanguageSwitcher />
+          <Toggler
+            showMenu={showMenu}
+            setShowMenu={() => setShowMenu(!showMenu)}
+          />
+        </div>
       </motion.div>
     </header>
   );

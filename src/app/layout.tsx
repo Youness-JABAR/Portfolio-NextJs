@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Providers from "@/components/common/Providers/Providers";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -9,16 +10,16 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Youness JABAR - Full-Stack Developer | AI Enthusiast",
+  title: "Youness JABAR - Développeur Full-Stack | Passionné d'IA",
   description:
-    "Hi, I'm Youness Jabar, a full-stack developer and AI enthusiast specializing in React, Angular, Laravel, and AI-driven solutions. Explore my projects and experience.",
+    "Bonjour, je suis Youness Jabar, développeur full-stack et passionné d'IA, spécialisé en React, Angular, Laravel et solutions IA. Découvrez mes projets et mon expérience.",
   icons: {
     icon: "/favicon.png",
   },
   openGraph: {
-    title: "Youness JABAR - Full-Stack Developer | AI Enthusiast",
+    title: "Youness JABAR - Développeur Full-Stack | Passionné d'IA",
     description:
-      "Hi, I'm Youness Jabar, a full-stack developer and AI enthusiast specializing in React, Angular, Laravel, and AI-driven solutions. Explore my projects and experience.",
+      "Bonjour, je suis Youness Jabar, développeur full-stack et passionné d'IA, spécialisé en React, Angular, Laravel et solutions IA. Découvrez mes projets et mon expérience.",
     url: "https://youness-jabar.vercel.app/",
     siteName: "Youness Jabar Portfolio",
     images: [
@@ -28,14 +29,14 @@ export const metadata: Metadata = {
         height: 600,
       },
     ],
-    locale: "en_US",
+    locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Youness JABAR - Full-Stack Developer | AI Enthusiast",
+    title: "Youness JABAR - Développeur Full-Stack | Passionné d'IA",
     description:
-      "Hi, I'm Youness Jabar, a full-stack developer and AI enthusiast specializing in React, Angular, Laravel, and AI-driven solutions. Explore my projects and experience.",
+      "Bonjour, je suis Youness Jabar, développeur full-stack et passionné d'IA, spécialisé en React, Angular, Laravel et solutions IA. Découvrez mes projets et mon expérience.",
     site: "@youness-jabar",
     // creator: '@yourusername',
     images: ["/favicon.png"],
@@ -48,9 +49,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className={`${poppins.variable} tracking-[0.02em]`}>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
