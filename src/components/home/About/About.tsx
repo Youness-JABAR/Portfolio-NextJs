@@ -1,25 +1,24 @@
-import React from "react";
-import { Playfair_Display } from "next/font/google";
-import Image from "next/image";
+"use client";
 
-const playfair_Display = Playfair_Display({
-  subsets: ["latin"],
-});
+import React from "react";
+import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 const About: React.FC = () => {
+  const { t } = useLanguage();
+  const { about } = t;
+
   return (
     <section id="about" className="w-full h-auto bg-gray-100 py-24">
       <div className="max-w-[1140px] mx-auto text-center">
-        {/* Section Header */}
         <h2 className="text-4xl font-bold uppercase text-gray-800 tracking-wide mb-8">
-          About Me
+          {about.title}
         </h2>
       </div>
 
       <div className="max-w-[1140px] mx-auto grid lg:grid-cols-3 gap-16 items-center">
-        {/* Profile Image */}
         <div className="lg:col-span-1">
-        <div className="lg:col-span-1 col-span-3">
+          <div className="lg:col-span-1 col-span-3">
             <div className="lg:pb-8 p-0 border-solid border-[20px] border-blue">
               <div className="about-img">
                 <Image
@@ -32,51 +31,49 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
-          {/* <div className="border-[10px] border-blue-600 rounded-lg overflow-hidden shadow-lg">
-            <Image
-              height={400}
-              width={400}
-              src="/youness2025.jpeg"
-              className="object-cover"
-              alt="Youness Jabar"
-            />
-          </div> */}
         </div>
 
-        {/* About Details */}
         <div className="lg:col-span-2 text-left pl-8">
           <ul className="space-y-4 text-lg text-gray-800 leading-relaxed">
             <li>
-              🎓 I hold a Bac +5 degree from{" "}
-              <strong className="text-blue-600">
-                ENSAK (National School of Applied Sciences in Kenitra)
-              </strong>, one of Morocco’s premier engineering schools.
+              {about.educationBefore}
+              <strong className="text-blue-600">{about.ensak}</strong>
+              {about.educationAfter}
             </li>
             <li>
-              🌍 During my studies, I participated in an exchange program at the{" "}
-              <strong className="text-blue-600">University of Cordoba, Spain</strong>, gaining a global perspective on technology and collaboration.
+              {about.exchangeBefore}
+              <strong className="text-blue-600">{about.cordoba}</strong>
+              {about.exchangeAfter}
             </li>
             <li>
-              💻 Currently, I’m working with{" "}
-              <strong className="text-blue-600">BEWIZYU</strong>, contributing to diverse projects using{" "}
-              <strong>Angular, React, Next.js, Laravel, and Node.js</strong>. My focus is on delivering scalable, user-centric applications and fostering seamless teamwork.
+              {about.workBefore}
+              <strong className="text-blue-600">{about.bewizyu}</strong>
+              {about.workMiddle}
+              <strong>{about.stack}</strong>
+              {about.workAfter}
             </li>
             <li>
-              🤖 Passionate about <strong>AI</strong> and <strong>digital marketing</strong>, I strive to create seamless user experiences by optimizing frontend performance and solving complex backend challenges.
+              {about.passionBefore}
+              <strong>{about.ai}</strong>
+              {about.passionMiddle}
+              <strong>{about.marketing}</strong>
+              {about.passionAfter}
             </li>
           </ul>
 
-          {/* Call to Action */}
           <p className="mt-8 text-lg text-gray-700">
             <a
               href="#contact"
               className="text-blue-600 font-semibold underline hover:no-underline hover:text-blue-800 transition-colors duration-300"
             >
-              Get in touch
+              {about.cta}
             </a>
             <span className="ml-2 text-gray-600">
-              to discuss <strong>projects</strong> or{" "}
-              <strong>opportunities</strong>.
+              {about.ctaSuffixBefore}
+              <strong>{about.projects}</strong>
+              {about.ctaSuffixMiddle}
+              <strong>{about.opportunities}</strong>
+              {about.ctaSuffixAfter}
             </span>
           </p>
         </div>

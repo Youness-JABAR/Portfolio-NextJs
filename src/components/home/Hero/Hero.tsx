@@ -7,10 +7,13 @@ import Envelope from "@/assets/icons/envelope.svg";
 import Github from "@/assets/icons/social-media/Github.svg";
 import LinkedIn from "@/assets/icons/social-media/Linkedin.svg";
 import { scrollIntoView } from "@/helpers/ScrollIntoView";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface HeroProps {}
 
 const Hero: React.FC<HeroProps> = () => {
+  const { t } = useLanguage();
+
   return (
     <div
       id="hero"
@@ -24,7 +27,7 @@ const Hero: React.FC<HeroProps> = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          I'm{" "}
+          {t.hero.greeting}{" "}
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -42,7 +45,7 @@ const Hero: React.FC<HeroProps> = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          Full Stack Developer | AI Enthusiast
+          {t.hero.subtitle}
         </motion.p>
 
         {/* Social Links */}
@@ -84,7 +87,7 @@ const Hero: React.FC<HeroProps> = () => {
               onClick={() => scrollIntoView("contact")}
               className="bg-[#4cc9f0] text-blue-900 font-semibold py-3 px-6 rounded-lg hover:bg-[#4361ee] hover:text-white transition-colors duration-300"
           >
-            Contact Me
+            {t.hero.contact}
           </button>
         </motion.div>
       </div>

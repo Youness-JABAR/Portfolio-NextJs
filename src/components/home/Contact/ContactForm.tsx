@@ -1,13 +1,15 @@
 "use client";
+
 import { Button } from "@/components/common/Buttons/Button";
 import { FormGroup } from "@/components/common/Form/FormGroup";
 import { FormLabel } from "@/components/common/Form/FormLabel";
 import { Input } from "@/components/common/Form/Input";
 import { Textarea } from "@/components/common/Form/Textarea";
+import { useLanguage } from "@/context/LanguageContext";
 import { Form, Formik, FormikHelpers } from "formik";
 import { ZodError, z } from "zod";
 import axios from "axios";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { SuccessMessage } from "./SuccessMessage";
 
 const initialValues = {
@@ -18,15 +20,21 @@ const initialValues = {
 };
 export type ContactMessage = typeof initialValues;
 
-const Schema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().email("Invalid email format"),
-  subject: z.string().min(1, "Subject is required"),
-  message: z.string().min(10, "The message should be at least 10 characters"),
-});
-
 const ContactForm = () => {
+  const { t } = useLanguage();
+  const form = t.contact.form;
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const schema = useMemo(
+    () =>
+      z.object({
+        name: z.string().min(1, form.validation.nameRequired),
+        email: z.string().email(form.validation.emailInvalid),
+        subject: z.string().min(1, form.validation.subjectRequired),
+        message: z.string().min(10, form.validation.messageMin),
+      }),
+    [form]
+  );
 
   const handleSubmit = async (
     values: typeof initialValues,
@@ -34,11 +42,11 @@ const ContactForm = () => {
   ) => {
     try {
       setFormSubmitted(false);
-      await axios.post("/api/contact", values); // Sending data to the API endpoint
+      await axios.post("/api/contact", values);
       setFormSubmitted(true);
       actions.resetForm();
     } catch (err) {
-      actions.setStatus("Failed to send your message. Please try again later.");
+      actions.setStatus(form.error);
     }
   };
 
@@ -47,7 +55,7 @@ const ContactForm = () => {
       initialValues={initialValues}
       validate={(values) => {
         try {
-          Schema.parse(values);
+          schema.parse(values);
         } catch (errors) {
           return (errors as ZodError).formErrors.fieldErrors;
         }
@@ -70,11 +78,11 @@ const ContactForm = () => {
             </p>
           )}
           <FormGroup className="w-full mb-4 sm:pr-2 sm:w-1/2">
-            <FormLabel htmlFor="name">Your name</FormLabel>
+            <FormLabel htmlFor="name">{form.name}</FormLabel>
             <Input
               id="name"
               name="name"
-              placeholder="What should I call you?"
+              placeholder={form.namePlaceholder}
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.name}
@@ -82,12 +90,12 @@ const ContactForm = () => {
             />
           </FormGroup>
           <FormGroup className="w-full mb-4 sm:pl-2 sm:w-1/2">
-            <FormLabel htmlFor="email">Your email</FormLabel>
+            <FormLabel htmlFor="email">{form.email}</FormLabel>
             <Input
               id="email"
               name="email"
               type="email"
-              placeholder="Where can I reach you?"
+              placeholder={form.emailPlaceholder}
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.email}
@@ -95,11 +103,11 @@ const ContactForm = () => {
             />
           </FormGroup>
           <FormGroup className="w-full mb-4">
-            <FormLabel htmlFor="subject">Subject</FormLabel>
+            <FormLabel htmlFor="subject">{form.subject}</FormLabel>
             <Input
               id="subject"
               name="subject"
-              placeholder="What is the subject of your message?"
+              placeholder={form.subjectPlaceholder}
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.subject}
@@ -107,11 +115,11 @@ const ContactForm = () => {
             />
           </FormGroup>
           <FormGroup className="w-full mb-4">
-            <FormLabel htmlFor="message">Message</FormLabel>
+            <FormLabel htmlFor="message">{form.message}</FormLabel>
             <Textarea
               id="message"
               name="message"
-              placeholder="What is your message?"
+              placeholder={form.messagePlaceholder}
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.message}
@@ -119,16 +127,14 @@ const ContactForm = () => {
             />
           </FormGroup>
           {formSubmitted && (
-            <SuccessMessage>
-              Your message has been sent successfully.
-            </SuccessMessage>
+            <SuccessMessage>{form.success}</SuccessMessage>
           )}
           <Button
             isLoading={isSubmitting}
             className="mt-8 mx-auto"
             type="submit"
           >
-            Send message
+            {form.submit}
           </Button>
         </Form>
       )}

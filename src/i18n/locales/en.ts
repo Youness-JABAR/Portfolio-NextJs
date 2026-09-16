@@ -12,15 +12,24 @@ const en = {
   },
   about: {
     title: "About Me",
-    education:
-      "🎓 I hold a Bac +5 degree from {school}, one of Morocco's premier engineering schools.",
-    exchange:
-      "🌍 During my studies, I participated in an exchange program at {university}, gaining a global perspective on technology and collaboration.",
-    work: "💻 Currently, I'm working with {company}, contributing to diverse projects using {stack}. My focus is on delivering scalable, user-centric applications and fostering seamless teamwork.",
-    passion:
-      "🤖 Passionate about {ai} and {marketing}, I strive to create seamless user experiences by optimizing frontend performance and solving complex backend challenges.",
+    educationBefore: "🎓 I hold a Bac +5 degree from ",
+    educationAfter: ", one of Morocco's premier engineering schools.",
+    exchangeBefore:
+      "🌍 During my studies, I participated in an exchange program at ",
+    exchangeAfter:
+      ", gaining a global perspective on technology and collaboration.",
+    workBefore: "💻 Currently, I'm working with ",
+    workMiddle: ", contributing to diverse projects using ",
+    workAfter:
+      ". My focus is on delivering scalable, user-centric applications and fostering seamless teamwork.",
+    passionBefore: "🤖 Passionate about ",
+    passionMiddle: " and ",
+    passionAfter:
+      ", I strive to create seamless user experiences by optimizing frontend performance and solving complex backend challenges.",
     cta: "Get in touch",
-    ctaSuffix: "to discuss {projects} or {opportunities}.",
+    ctaSuffixBefore: "to discuss ",
+    ctaSuffixMiddle: " or ",
+    ctaSuffixAfter: ".",
     ensak: "ENSAK (National School of Applied Sciences in Kenitra)",
     cordoba: "University of Cordoba, Spain",
     bewizyu: "BEWIZYU",
@@ -78,11 +87,14 @@ const en = {
       "Facemesh",
     ],
     technologies: "Technologies:",
+    videoTitle: "Projects for media processing",
+    techStack: "MediaPipe Python framework, OpenCV",
   },
   contact: {
     title: "Get in Touch",
     subtitle:
       "Feel free to reach out to discuss projects, opportunities, or just to say hi!",
+    location: "Rabat, Morocco",
     form: {
       name: "Your name",
       namePlaceholder: "What should I call you?",

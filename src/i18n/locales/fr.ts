@@ -12,15 +12,25 @@ const fr = {
   },
   about: {
     title: "À propos de moi",
-    education:
-      "🎓 Je suis diplômé Bac +5 de l'{school}, l'une des meilleures écoles d'ingénieurs du Maroc.",
-    exchange:
-      "🌍 Durant mes études, j'ai participé à un programme d'échange à l'{university}, ce qui m'a permis d'acquérir une perspective internationale sur la technologie et la collaboration.",
-    work: "💻 Actuellement, je travaille chez {company}, où je contribue à divers projets avec {stack}. Mon objectif est de livrer des applications évolutives, centrées sur l'utilisateur, tout en favorisant un travail d'équipe fluide.",
-    passion:
-      "🤖 Passionné par l'{ai} et le {marketing}, je m'efforce de créer des expériences utilisateur fluides en optimisant les performances frontend et en résolvant des défis backend complexes.",
+    educationBefore: "🎓 Je suis diplômé Bac +5 de l'",
+    educationAfter:
+      ", l'une des meilleures écoles d'ingénieurs du Maroc.",
+    exchangeBefore:
+      "🌍 Durant mes études, j'ai participé à un programme d'échange à l'",
+    exchangeAfter:
+      ", ce qui m'a permis d'acquérir une perspective internationale sur la technologie et la collaboration.",
+    workBefore: "💻 Actuellement, je travaille chez ",
+    workMiddle: ", où je contribue à divers projets avec ",
+    workAfter:
+      ". Mon objectif est de livrer des applications évolutives, centrées sur l'utilisateur, tout en favorisant un travail d'équipe fluide.",
+    passionBefore: "🤖 Passionné par l'",
+    passionMiddle: " et le ",
+    passionAfter:
+      ", je m'efforce de créer des expériences utilisateur fluides en optimisant les performances frontend et en résolvant des défis backend complexes.",
     cta: "Contactez-moi",
-    ctaSuffix: "pour discuter de {projects} ou d'{opportunities}.",
+    ctaSuffixBefore: "pour discuter de ",
+    ctaSuffixMiddle: " ou d'",
+    ctaSuffixAfter: ".",
     ensak: "ENSAK (École Nationale des Sciences Appliquées de Kénitra)",
     cordoba: "Université de Cordoue, Espagne",
     bewizyu: "BEWIZYU",
@@ -78,11 +88,14 @@ const fr = {
       "Facemesh",
     ],
     technologies: "Technologies :",
+    videoTitle: "Projets de traitement média",
+    techStack: "Framework MediaPipe Python, OpenCV",
   },
   contact: {
     title: "Me contacter",
     subtitle:
       "N'hésitez pas à me contacter pour discuter de projets, d'opportunités ou simplement pour dire bonjour !",
+    location: "Rabat, Maroc",
     form: {
       name: "Votre nom",
       namePlaceholder: "Comment dois-je vous appeler ?",

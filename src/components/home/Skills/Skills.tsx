@@ -2,19 +2,24 @@
 
 import React from "react";
 import SkillCard from "./SkillCard";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Skills: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="skills" className="w-full h-auto bg-dark pt-24 pb-24">
       <div className="max-w-[1140px] mx-auto text-center">
         {/* Section Header */}
         <h2 className="text-4xl font-bold uppercase text-white tracking-wide mb-12">
-          Skills
+          {t.skills.title}
         </h2>
 
         {/* Frontend Skills */}
         <div className="mb-12">
-          <h3 className="text-2xl font-semibold text-white mb-6">Frontend</h3>
+          <h3 className="text-2xl font-semibold text-white mb-6">
+            {t.skills.frontend}
+          </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
             <SkillCard
               src="images/skills/ts.svg"
@@ -51,7 +56,9 @@ const Skills: React.FC = () => {
 
         {/* Backend Skills */}
         <div className="mb-12">
-          <h3 className="text-2xl font-semibold text-white mb-6">Backend</h3>
+          <h3 className="text-2xl font-semibold text-white mb-6">
+            {t.skills.backend}
+          </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
             <SkillCard
               src="images/skills/nodejs.svg"
@@ -79,7 +86,7 @@ const Skills: React.FC = () => {
         {/* State Management */}
         <div className="mb-12">
           <h3 className="text-2xl font-semibold text-white mb-6">
-            State Management
+            {t.skills.stateManagement}
           </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
             <SkillCard
@@ -98,7 +105,9 @@ const Skills: React.FC = () => {
 
         {/* Tools */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-6">DevOps</h3>
+          <h3 className="text-2xl font-semibold text-white mb-6">
+            {t.skills.devops}
+          </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
             <SkillCard src="images/skills/git.svg" alt="Git" title="Git" />
             <SkillCard
