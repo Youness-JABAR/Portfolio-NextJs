@@ -8,7 +8,7 @@ export default function LanguageSwitcher() {
 
   return (
     <div
-      className="flex items-center gap-1 rounded-full border border-gray-200 bg-white p-1 text-sm font-medium shadow-sm"
+      className="flex items-center gap-0.5 sm:gap-1 rounded-full border border-gray-200 bg-white p-0.5 sm:p-1 text-xs sm:text-sm font-medium shadow-sm"
       role="group"
       aria-label="Language selector"
     >
@@ -16,7 +16,7 @@ export default function LanguageSwitcher() {
         type="button"
         onClick={() => setLocale("fr")}
         className={clsx(
-          "rounded-full px-3 py-1 transition-colors",
+          "rounded-full px-2 sm:px-3 py-1 transition-colors",
           locale === "fr"
             ? "bg-primary text-white"
             : "text-gray-600 hover:text-primary"
@@ -29,7 +29,7 @@ export default function LanguageSwitcher() {
         type="button"
         onClick={() => setLocale("en")}
         className={clsx(
-          "rounded-full px-3 py-1 transition-colors",
+          "rounded-full px-2 sm:px-3 py-1 transition-colors",
           locale === "en"
             ? "bg-primary text-white"
             : "text-gray-600 hover:text-primary"

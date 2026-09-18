@@ -1,3 +1,5 @@
+const NAV_OFFSET = 80;
+
 export const scrollIntoView = (targetSection: string) => {
 	if (!targetSection) {
 		return;
@@ -7,5 +9,7 @@ export const scrollIntoView = (targetSection: string) => {
 		return;
 	}
 
-	section.scrollIntoView({ behavior: 'smooth' });
+	const top =
+		section.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
+	window.scrollTo({ top, behavior: 'smooth' });
 };

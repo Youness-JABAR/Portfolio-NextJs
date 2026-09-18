@@ -4,6 +4,7 @@ import Navbar from '@/components/common/Navbar/Navbar'
 import ScrollToTop from '@/components/common/ScrollToTop'
 import ViewOnGithub from '@/components/common/ViewOnGithub'
 import About from '@/components/home/About/About'
+import Experience from '@/components/home/Experience/Experience'
 import Contact from '@/components/home/Contact/Contact'
 import Hero from '@/components/home/Hero/Hero'
 import AiProjects from '@/components/home/Projects/AiProjects'
@@ -17,6 +18,7 @@ export default function Home() {
     <Navbar/>
     <Hero/>
     <About/>
+    <Experience/>
     <Skills/>
     <Projects/>
     <AiProjects/>

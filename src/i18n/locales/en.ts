@@ -1,100 +1,167 @@
 const en = {
   nav: {
     about: "About",
+    experience: "Experience",
     skills: "Skills",
     projects: "Projects",
     contact: "Contact Me",
   },
   hero: {
     greeting: "I'm",
-    subtitle: "Full Stack Developer | AI Enthusiast",
+    subtitle: "Full-Stack Developer | TypeScript · Java/Spring Boot · DevOps/Cloud",
+    tagline: "M2 Computer Science Student · Université Grenoble Alpes",
+    availability: "Seeking an internship from February 2027",
     contact: "Contact Me",
   },
   about: {
     title: "About Me",
-    educationBefore: "🎓 I hold a Bac +5 degree from ",
-    educationAfter: ", one of Morocco's premier engineering schools.",
-    exchangeBefore:
-      "🌍 During my studies, I participated in an exchange program at ",
-    exchangeAfter:
-      ", gaining a global perspective on technology and collaboration.",
-    workBefore: "💻 Currently, I'm working with ",
-    workMiddle: ", contributing to diverse projects using ",
-    workAfter:
-      ". My focus is on delivering scalable, user-centric applications and fostering seamless teamwork.",
-    passionBefore: "🤖 Passionate about ",
-    passionMiddle: " and ",
-    passionAfter:
-      ", I strive to create seamless user experiences by optimizing frontend performance and solving complex backend challenges.",
+    profile:
+      "Full-Stack Developer with 4 years of professional experience building web applications. Currently pursuing a Master 2 in Computer Science at Université Grenoble Alpes, I am seeking a final-year internship starting February 2027, with a strong interest in TypeScript/Java Full-Stack development and DevOps/Cloud environments.",
+    educationTitle: "Education",
+    education: [
+      {
+        school: "Université Grenoble Alpes",
+        degree: "Master 2 Computer Science, Software Engineering",
+        period: "2026 – 2027",
+        location: "Grenoble, France",
+      },
+      {
+        school: "University of Cordoba",
+        degree: "Erasmus+ Exchange",
+        period: "2021 – 2022",
+        location: "Cordoba, Spain",
+      },
+      {
+        school: "National School of Applied Sciences, Kenitra",
+        degree: "Software Engineering & Mobile Development",
+        period: "2017 – 2022",
+        location: "Kenitra, Morocco",
+      },
+    ],
+    certificationsTitle: "Certifications",
+    certifications: [
+      "Spring Boot: Mastering the Fundamentals – Code with Mosh (May 2026)",
+      "Essential Google Cloud Infrastructure: Core Services – Google Cloud (February 2025)",
+      "Google Cloud Fundamentals: Core Infrastructure – Google Cloud (January 2025)",
+      "Essential Google Cloud Infrastructure: Foundation – Google Cloud (January 2025)",
+      "Jira Fundamentals – ATLASSIAN University (October 2022)",
+      "TensorFlow for AI & Machine Learning – DeepLearning.AI (August 2021)",
+      "Introduction to Machine Learning – Duke University (May 2021)",
+    ],
+    languagesTitle: "Languages",
+    languages: [
+      "French: Fluent (C1 - TCF)",
+      "English: Fluent (C1 - IELTS)",
+      "Spanish: Intermediate",
+      "Arabic: Native",
+    ],
     cta: "Get in touch",
-    ctaSuffixBefore: "to discuss ",
-    ctaSuffixMiddle: " or ",
-    ctaSuffixAfter: ".",
-    ensak: "ENSAK (National School of Applied Sciences in Kenitra)",
-    cordoba: "University of Cordoba, Spain",
-    bewizyu: "BEWIZYU",
-    stack: "Angular, React, Next.js, Laravel, and Node.js",
-    ai: "AI",
-    marketing: "digital marketing",
-    projects: "projects",
-    opportunities: "opportunities",
+    ctaSuffix: "to discuss an ",
+    ctaHighlight: "internship",
+    ctaSuffixEnd: " or a professional opportunity.",
+  },
+  experience: {
+    title: "Experience",
+    items: [
+      {
+        company: "BEWIZYU",
+        location: "Morocco",
+        role: "Full-Stack Developer",
+        period: "September 2022 – August 2026",
+        bullets: [
+          "Built web applications for French clients including MAPA Assurance, Métropole de Lyon, Poujoulat and Atlantic Group.",
+          "Designed interfaces with React, Next.js, Angular and TypeScript.",
+          "Developed REST APIs and backends with Node.js, Laravel and Strapi.",
+          "Integrated headless CMS Strapi and managed MySQL data.",
+          "Automated testing with Jest and CI/CD deployments via GitLab and Azure DevOps.",
+          "Worked in Agile/Scrum with Git, Jira and Confluence.",
+        ],
+      },
+      {
+        company: "BEWIZYU",
+        location: "Morocco",
+        role: "Final-Year Internship – Full-Stack Developer",
+        period: "March 2022 – August 2022",
+        bullets: [
+          "Developed new features and improved code quality.",
+          "Technologies: Angular, NgRx Store, RxJS, Swagger and Laravel.",
+        ],
+      },
+      {
+        company: "Enssup",
+        location: "Morocco",
+        role: "Web Development Intern",
+        period: "June 2020 – September 2020",
+        bullets: [
+          "Complete redesign and implementation of the second version of the MABOURSE website.",
+          "Technologies: HTML, CSS, Bootstrap, JavaScript, Django.",
+        ],
+      },
+    ],
   },
   skills: {
     title: "Skills",
     frontend: "Frontend",
     backend: "Backend",
-    stateManagement: "State Management",
-    devops: "DevOps",
+    database: "Databases",
+    devops: "DevOps / Cloud",
+    testing: "Testing & Tools",
   },
   projects: {
     title: "Projects",
     subtitle:
-      "A showcase of some of the personal projects I've worked on, combining my skills in development and design.",
-    morartist: {
-      title: "Morartist.com",
-      description: "Selling portraits application",
+      "Personal projects and innovations showcasing Full-Stack, AI and DevOps skills.",
+    portfolio: {
+      title: "Portfolio",
+      description:
+        "Personal portfolio built with React / Next.js and deployed on Vercel.",
+    },
+    aiGermanTutor: {
+      title: "AIGermanTutor",
+      description:
+        "AI-powered language learning platform for German.",
+    },
+    checkpoint: {
+      title: "Checkpoint Extension",
+      description:
+        "Chrome extension for real-time fact-checking using the OpenAI API and Make.com.",
     },
     fitness: {
-      title: "FitnessCalcAdvisor.com",
-      description: "Fitness calculation and advice website",
+      title: "FitnessCalcAdvisor",
+      description:
+        "SEO-optimized website for fitness calculations and training advice.",
     },
     mabourse: {
       title: "MABOURSE",
-      description: "Second version of MABOURSE website",
-    },
-    tal3andak: {
-      title: "Tal-3andak",
-      description: "E-commerce website for online purchases in Kenitra",
-    },
-    fee7: {
-      title: "FEE7",
-      description: "Mobile app for ENSAK Enterprise Forum",
+      description:
+        "Complete redesign of the second version of the MABOURSE website (Enssup internship).",
     },
   },
   aiProjects: {
     title: "AI Projects",
     subtitle:
-      "A collection of AI-driven projects showcasing innovation in media processing and computer vision.",
-    mediaTitle: "Projects for Media Processing",
+      "MediaPipe Python projects for media processing and computer vision.",
+    mediaTitle: "Media Processing Projects",
     items: [
-      "Control the Volume with Your Fingers",
+      "Volume Controller with Fingers",
       "Virtual Painter",
       "Virtual Mouse",
-      "Testing a Virtual Ring",
+      "Virtual Ring Tester",
       "Personal Trainer",
       "Fingers Counter",
       "Face Detection",
       "Facemesh",
     ],
     technologies: "Technologies:",
-    videoTitle: "Projects for media processing",
+    videoTitle: "Media processing projects",
     techStack: "MediaPipe Python framework, OpenCV",
   },
   contact: {
     title: "Get in Touch",
     subtitle:
-      "Feel free to reach out to discuss projects, opportunities, or just to say hi!",
-    location: "Rabat, Morocco",
+      "Hiring for a 2027 internship or want to discuss an opportunity? Drop me a message!",
+    location: "Grenoble, France",
+    phone: "+33 7 54 85 15 78",
     form: {
       name: "Your name",
       namePlaceholder: "What should I call you?",
@@ -121,9 +188,9 @@ const en = {
     by: "by",
   },
   metadata: {
-    title: "Youness JABAR - Full-Stack Developer | AI Enthusiast",
+    title: "Youness JABAR - Full-Stack Developer | M2 Grenoble Alpes",
     description:
-      "Hi, I'm Youness Jabar, a full-stack developer and AI enthusiast specializing in React, Angular, Laravel, and AI-driven solutions. Explore my projects and experience.",
+      "Full-Stack Developer with 4 years of experience. M2 Computer Science student at Université Grenoble Alpes. Seeking an internship from February 2027.",
   },
 };
 

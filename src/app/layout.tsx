@@ -10,16 +10,16 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Youness JABAR - Développeur Full-Stack | Passionné d'IA",
+  title: "Youness JABAR - Développeur Full-Stack | M2 Grenoble Alpes",
   description:
-    "Bonjour, je suis Youness Jabar, développeur full-stack et passionné d'IA, spécialisé en React, Angular, Laravel et solutions IA. Découvrez mes projets et mon expérience.",
+    "Développeur Full-Stack avec 4 ans d'expérience. Étudiant M2 Génie Informatique à l'Université Grenoble Alpes. Recherche de stage à partir de février 2027.",
   icons: {
     icon: "/favicon.png",
   },
   openGraph: {
-    title: "Youness JABAR - Développeur Full-Stack | Passionné d'IA",
+    title: "Youness JABAR - Développeur Full-Stack | M2 Grenoble Alpes",
     description:
-      "Bonjour, je suis Youness Jabar, développeur full-stack et passionné d'IA, spécialisé en React, Angular, Laravel et solutions IA. Découvrez mes projets et mon expérience.",
+      "Développeur Full-Stack avec 4 ans d'expérience. Étudiant M2 Génie Informatique à l'Université Grenoble Alpes. Recherche de stage à partir de février 2027.",
     url: "https://youness-jabar.vercel.app/",
     siteName: "Youness Jabar Portfolio",
     images: [
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Youness JABAR - Développeur Full-Stack | Passionné d'IA",
+    title: "Youness JABAR - Développeur Full-Stack | M2 Grenoble Alpes",
     description:
-      "Bonjour, je suis Youness Jabar, développeur full-stack et passionné d'IA, spécialisé en React, Angular, Laravel et solutions IA. Découvrez mes projets et mon expérience.",
+      "Développeur Full-Stack avec 4 ans d'expérience. Étudiant M2 Génie Informatique à l'Université Grenoble Alpes. Recherche de stage à partir de février 2027.",
     site: "@youness-jabar",
     // creator: '@yourusername',
     images: ["/favicon.png"],

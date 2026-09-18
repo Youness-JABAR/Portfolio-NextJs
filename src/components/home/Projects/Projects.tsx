@@ -9,20 +9,39 @@ const Projects: React.FC = () => {
   const { projects } = t;
 
   return (
-    <section id="projects" className="w-full h-auto bg-gray-50 py-24">
-      <div className="max-w-[1140px] mx-auto text-center">
-        <h2 className="text-4xl font-bold uppercase text-gray-800 mb-4">
+    <section
+      id="projects"
+      className="w-full bg-gray-50 section-padding scroll-mt-[var(--nav-height)]"
+    >
+      <div className="section-container text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold uppercase text-gray-800 mb-4">
           {projects.title}
         </h2>
-        <p className="text-lg text-gray-600 mb-12">{projects.subtitle}</p>
+        <p className="text-base sm:text-lg text-gray-600 mb-8 md:mb-12">
+          {projects.subtitle}
+        </p>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 md:gap-8">
           <ProjectCard
-            imageUrl="/images/projects/morartist.png"
-            link="https://morartist-frontend.vercel.app/"
-            title={projects.morartist.title}
-            description={projects.morartist.description}
-            technologies="Next.js, TailwindCSS"
+            imageUrl="/favicon.png"
+            link="https://youness-jabar.vercel.app/"
+            title={projects.portfolio.title}
+            description={projects.portfolio.description}
+            technologies="Next.js, React, Tailwind CSS, Vercel"
+          />
+
+          <ProjectCard
+            imageUrl="/logo.png"
+            title={projects.aiGermanTutor.title}
+            description={projects.aiGermanTutor.description}
+            technologies="AI, TypeScript, Next.js"
+          />
+
+          <ProjectCard
+            imageUrl="/favicon.png"
+            title={projects.checkpoint.title}
+            description={projects.checkpoint.description}
+            technologies="Chrome Extension, OpenAI API, Make.com"
           />
 
           <ProjectCard
@@ -30,7 +49,7 @@ const Projects: React.FC = () => {
             link="https://www.FitnessCalcAdvisor.com"
             title={projects.fitness.title}
             description={projects.fitness.description}
-            technologies="Next.js, TailwindCSS"
+            technologies="Next.js, Tailwind CSS, SEO"
           />
 
           <ProjectCard
@@ -38,20 +57,6 @@ const Projects: React.FC = () => {
             title={projects.mabourse.title}
             description={projects.mabourse.description}
             technologies="HTML, CSS, Bootstrap, Django"
-          />
-
-          <ProjectCard
-            imageUrl="/images/projects/ecommerce.png"
-            title={projects.tal3andak.title}
-            description={projects.tal3andak.description}
-            technologies="PHP, MySQL, HTML, Bootstrap"
-          />
-
-          <ProjectCard
-            imageUrl="/images/projects/FEE.png"
-            title={projects.fee7.title}
-            description={projects.fee7.description}
-            technologies="Java, Android Studio, Firebase"
           />
         </div>
       </div>

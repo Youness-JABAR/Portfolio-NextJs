@@ -4,8 +4,9 @@ import { ButtonHTMLAttributes, FC, useEffect, useState } from "react";
 
 interface Props
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type" | "onClick"> {
-  to: string; // Section ID to scroll to
-  activeClassName?: string; // Class applied when the link is active
+  to: string;
+  activeClassName?: string;
+  onNavigate?: () => void;
 }
 
 const NavLink: FC<Props> = ({
@@ -13,6 +14,7 @@ const NavLink: FC<Props> = ({
   to,
   className,
   activeClassName,
+  onNavigate,
   ...rest
 }) => {
   const [isActive, setIsActive] = useState(false);
@@ -39,7 +41,10 @@ const NavLink: FC<Props> = ({
   return (
     <button
       type="button"
-      onClick={() => scrollIntoView(to)}
+      onClick={() => {
+        scrollIntoView(to);
+        onNavigate?.();
+      }}
       className={clsx(
         "w-full h-full text-md font-medium transition lg:pr-6 hover:text-primary",
         className,

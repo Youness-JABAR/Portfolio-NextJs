@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies,
 }) => {
   return (
-    <div className="col-span-1 mx-2 hover:shadow-lg hover:scale-105 transition-transform duration-300 rounded-lg overflow-hidden bg-white">
+    <div className="col-span-1 hover:shadow-lg hover:scale-[1.02] sm:hover:scale-105 transition-transform duration-300 rounded-lg overflow-hidden bg-white">
       <div className="relative">
         {/* Project Image */}
         <Image

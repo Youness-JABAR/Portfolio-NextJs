@@ -8,8 +8,14 @@
   --color-success: 65 171 92;
   --color-gray-400: 137 137 137;
   --color-gray-100: 247 247 247;
-  --font-primary: "Poppins", sans-serif; /* Primary font */
+  --font-primary: "Poppins", sans-serif;
+  --nav-height: 4.5rem;
 }
+
+html {
+  scroll-padding-top: var(--nav-height);
+}
+
 body {
   font-family: var(--font-primary);
   background-color: rgb(
@@ -21,4 +27,14 @@ body {
 
 .grecaptcha-badge {
   display: none !important;
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto w-full max-w-[1140px] px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
 }
