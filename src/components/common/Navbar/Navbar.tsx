@@ -7,13 +7,13 @@ import { Toggler } from "./Toggler";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { scrollIntoView } from "@/helpers/ScrollIntoView";
-import { useLanguage } from "@/context/LanguageContext";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 interface Props {}
 
 const Navbar: FC<Props> = () => {
-  const { t } = useLanguage();
+  const t = useTranslations("nav");
   const navRef = useRef<HTMLElement>(null);
   const [showMenu, setShowMenu] = useState(false);
   useEffect(() => {
@@ -80,7 +80,7 @@ const Navbar: FC<Props> = () => {
               activeClassName="text-primary font-bold"
               onNavigate={() => setShowMenu(false)}
             >
-              {t.nav.about}
+              {t("about")}
             </NavLink>
           </NavItem>
           <NavItem showMenu={showMenu} className="delay-100">
@@ -89,7 +89,7 @@ const Navbar: FC<Props> = () => {
               activeClassName="text-primary font-bold"
               onNavigate={() => setShowMenu(false)}
             >
-              {t.nav.experience}
+              {t("experience")}
             </NavLink>
           </NavItem>
           <NavItem showMenu={showMenu} className="delay-150">
@@ -98,7 +98,7 @@ const Navbar: FC<Props> = () => {
               activeClassName="text-primary font-bold"
               onNavigate={() => setShowMenu(false)}
             >
-              {t.nav.skills}
+              {t("skills")}
             </NavLink>
           </NavItem>
           <NavItem showMenu={showMenu} className="delay-75">
@@ -107,7 +107,7 @@ const Navbar: FC<Props> = () => {
               activeClassName="text-primary font-bold"
               onNavigate={() => setShowMenu(false)}
             >
-              {t.nav.projects}
+              {t("projects")}
             </NavLink>
           </NavItem>
           <NavItem showMenu={showMenu} className="delay-200">
@@ -118,7 +118,7 @@ const Navbar: FC<Props> = () => {
               }}
               className="hover:bg-primary hover:text-white transition"
             >
-              {t.nav.contact}
+              {t("contact")}
             </Button>
           </NavItem>
         </ul>

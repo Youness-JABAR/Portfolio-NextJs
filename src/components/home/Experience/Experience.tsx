@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
-import { useLanguage } from "@/context/LanguageContext";
+import type { ExperienceItem } from "@/i18n/types";
+import { useTranslations } from "next-intl";
 
 const Experience: React.FC = () => {
-  const { t } = useLanguage();
-  const { experience } = t;
+  const t = useTranslations("experience");
+  const items = t.raw("items") as ExperienceItem[];
 
   return (
     <section
@@ -14,11 +15,11 @@ const Experience: React.FC = () => {
     >
       <div className="section-container">
         <h2 className="text-3xl sm:text-4xl font-bold uppercase text-gray-800 tracking-wide mb-8 md:mb-12 text-center">
-          {experience.title}
+          {t("title")}
         </h2>
 
         <div className="space-y-8 md:space-y-10">
-          {experience.items.map((item) => (
+          {items.map((item) => (
             <div
               key={`${item.company}-${item.period}`}
               className="border-l-4 border-blue-600 pl-4 sm:pl-6"

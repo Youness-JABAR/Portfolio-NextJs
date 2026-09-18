@@ -2,10 +2,10 @@
 
 import React from "react";
 import SkillCard from "./SkillCard";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 
 const Skills: React.FC = () => {
-  const { t } = useLanguage();
+  const t = useTranslations("skills");
 
   return (
     <section
@@ -14,12 +14,12 @@ const Skills: React.FC = () => {
     >
       <div className="section-container text-center">
         <h2 className="text-3xl sm:text-4xl font-bold uppercase text-white tracking-wide mb-8 md:mb-12">
-          {t.skills.title}
+          {t("title")}
         </h2>
 
         <div className="mb-12">
           <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6">
-            {t.skills.frontend}
+            {t("frontend")}
           </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
             <SkillCard src="images/skills/react.svg" alt="React" title="React" />
@@ -33,7 +33,7 @@ const Skills: React.FC = () => {
 
         <div className="mb-12">
           <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6">
-            {t.skills.backend}
+            {t("backend")}
           </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
             <SkillCard alt="Java" title="Java" />
@@ -47,7 +47,7 @@ const Skills: React.FC = () => {
 
         <div className="mb-12">
           <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6">
-            {t.skills.database}
+            {t("database")}
           </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
             <SkillCard alt="PostgreSQL" title="PostgreSQL" />
@@ -58,7 +58,7 @@ const Skills: React.FC = () => {
 
         <div className="mb-12">
           <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6">
-            {t.skills.devops}
+            {t("devops")}
           </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
             <SkillCard alt="Docker" title="Docker" />
@@ -72,7 +72,7 @@ const Skills: React.FC = () => {
 
         <div>
           <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6">
-            {t.skills.testing}
+            {t("testing")}
           </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
             <SkillCard alt="Jest" title="Jest" />

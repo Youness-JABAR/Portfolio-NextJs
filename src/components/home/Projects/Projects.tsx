@@ -2,11 +2,10 @@
 
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 
 const Projects: React.FC = () => {
-  const { t } = useLanguage();
-  const { projects } = t;
+  const t = useTranslations("projects");
 
   return (
     <section
@@ -15,47 +14,47 @@ const Projects: React.FC = () => {
     >
       <div className="section-container text-center">
         <h2 className="text-3xl sm:text-4xl font-bold uppercase text-gray-800 mb-4">
-          {projects.title}
+          {t("title")}
         </h2>
         <p className="text-base sm:text-lg text-gray-600 mb-8 md:mb-12">
-          {projects.subtitle}
+          {t("subtitle")}
         </p>
 
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 md:gap-8">
           <ProjectCard
             imageUrl="/favicon.png"
             link="https://youness-jabar.vercel.app/"
-            title={projects.portfolio.title}
-            description={projects.portfolio.description}
+            title={t("portfolio.title")}
+            description={t("portfolio.description")}
             technologies="Next.js, React, Tailwind CSS, Vercel"
           />
 
           <ProjectCard
             imageUrl="/logo.png"
-            title={projects.aiGermanTutor.title}
-            description={projects.aiGermanTutor.description}
+            title={t("aiGermanTutor.title")}
+            description={t("aiGermanTutor.description")}
             technologies="AI, TypeScript, Next.js"
           />
 
           <ProjectCard
             imageUrl="/favicon.png"
-            title={projects.checkpoint.title}
-            description={projects.checkpoint.description}
+            title={t("checkpoint.title")}
+            description={t("checkpoint.description")}
             technologies="Chrome Extension, OpenAI API, Make.com"
           />
 
           <ProjectCard
             imageUrl="/images/projects/fitness.png"
             link="https://www.FitnessCalcAdvisor.com"
-            title={projects.fitness.title}
-            description={projects.fitness.description}
+            title={t("fitness.title")}
+            description={t("fitness.description")}
             technologies="Next.js, Tailwind CSS, SEO"
           />
 
           <ProjectCard
             imageUrl="/images/projects/maboursev2.png"
-            title={projects.mabourse.title}
-            description={projects.mabourse.description}
+            title={t("mabourse.title")}
+            description={t("mabourse.description")}
             technologies="HTML, CSS, Bootstrap, Django"
           />
         </div>

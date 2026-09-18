@@ -1,10 +1,53 @@
 "use client";
 
-import { useLanguage } from "@/context/LanguageContext";
+import { Link, usePathname } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 import clsx from "clsx";
+import { useLocale } from "next-intl";
+import { useEffect, useState } from "react";
+
+function LocaleLink({
+  targetLocale,
+  hash,
+  children,
+  isActive,
+}: {
+  targetLocale: Locale;
+  hash: string;
+  children: React.ReactNode;
+  isActive: boolean;
+}) {
+  const pathname = usePathname();
+
+  return (
+    <Link
+      href={`${pathname}${hash}`}
+      locale={targetLocale}
+      scroll={false}
+      className={clsx(
+        "rounded-full px-2 sm:px-3 py-1 transition-colors",
+        isActive
+          ? "bg-primary text-white"
+          : "text-gray-600 hover:text-primary"
+      )}
+      aria-current={isActive ? "page" : undefined}
+    >
+      {children}
+    </Link>
+  );
+}
 
 export default function LanguageSwitcher() {
-  const { locale, setLocale } = useLanguage();
+  const locale = useLocale() as Locale;
+  const [hash, setHash] = useState("");
+
+  useEffect(() => {
+    setHash(window.location.hash);
+
+    const handleHashChange = () => setHash(window.location.hash);
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   return (
     <div
@@ -12,32 +55,12 @@ export default function LanguageSwitcher() {
       role="group"
       aria-label="Language selector"
     >
-      <button
-        type="button"
-        onClick={() => setLocale("fr")}
-        className={clsx(
-          "rounded-full px-2 sm:px-3 py-1 transition-colors",
-          locale === "fr"
-            ? "bg-primary text-white"
-            : "text-gray-600 hover:text-primary"
-        )}
-        aria-pressed={locale === "fr"}
-      >
+      <LocaleLink targetLocale="fr" hash={hash} isActive={locale === "fr"}>
         FR
-      </button>
-      <button
-        type="button"
-        onClick={() => setLocale("en")}
-        className={clsx(
-          "rounded-full px-2 sm:px-3 py-1 transition-colors",
-          locale === "en"
-            ? "bg-primary text-white"
-            : "text-gray-600 hover:text-primary"
-        )}
-        aria-pressed={locale === "en"}
-      >
+      </LocaleLink>
+      <LocaleLink targetLocale="en" hash={hash} isActive={locale === "en"}>
         EN
-      </button>
+      </LocaleLink>
     </div>
   );
 }

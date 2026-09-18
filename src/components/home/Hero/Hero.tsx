@@ -7,12 +7,10 @@ import Envelope from "@/assets/icons/envelope.svg";
 import Github from "@/assets/icons/social-media/Github.svg";
 import LinkedIn from "@/assets/icons/social-media/Linkedin.svg";
 import { scrollIntoView } from "@/helpers/ScrollIntoView";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 
-interface HeroProps {}
-
-const Hero: React.FC<HeroProps> = () => {
-  const { t } = useLanguage();
+const Hero: React.FC = () => {
+  const t = useTranslations("hero");
 
   return (
     <div
@@ -26,7 +24,7 @@ const Hero: React.FC<HeroProps> = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          {t.hero.greeting}{" "}
+          {t("greeting")}{" "}
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -43,7 +41,7 @@ const Hero: React.FC<HeroProps> = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          {t.hero.subtitle}
+          {t("subtitle")}
         </motion.p>
 
         <motion.p
@@ -52,7 +50,7 @@ const Hero: React.FC<HeroProps> = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
         >
-          {t.hero.tagline}
+          {t("tagline")}
         </motion.p>
 
         <motion.span
@@ -61,7 +59,7 @@ const Hero: React.FC<HeroProps> = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 1.4 }}
         >
-          {t.hero.availability}
+          {t("availability")}
         </motion.span>
 
         <motion.ul
@@ -100,7 +98,7 @@ const Hero: React.FC<HeroProps> = () => {
             onClick={() => scrollIntoView("contact")}
             className="bg-[#4cc9f0] text-blue-900 font-semibold py-3 px-6 rounded-lg hover:bg-[#4361ee] hover:text-white transition-colors duration-300"
           >
-            {t.hero.contact}
+            {t("contact")}
           </button>
         </motion.div>
       </div>

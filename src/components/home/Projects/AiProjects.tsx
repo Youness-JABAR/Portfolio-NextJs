@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 
 const AiProjects: React.FC = () => {
-  const { t } = useLanguage();
-  const { aiProjects } = t;
+  const t = useTranslations("aiProjects");
+  const items = t.raw("items") as string[];
 
   return (
     <section
@@ -15,11 +15,9 @@ const AiProjects: React.FC = () => {
       <div className="section-container">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold uppercase text-gray-800 mb-4">
-            {aiProjects.title}
+            {t("title")}
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
-            {aiProjects.subtitle}
-          </p>
+          <p className="text-base sm:text-lg text-gray-600">{t("subtitle")}</p>
         </div>
 
         <div className="max-w-[550px] mx-auto w-full">
@@ -27,25 +25,25 @@ const AiProjects: React.FC = () => {
             <iframe
               className="w-full h-full rounded-lg"
               src="https://www.youtube.com/embed/mNBbranvQEw"
-              title={aiProjects.videoTitle}
+              title={t("videoTitle")}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </div>
 
           <div className="py-6 sm:py-8 text-left">
             <h4 className="text-lg sm:text-xl font-semibold mb-4 text-gray-800">
-              {aiProjects.mediaTitle}
+              {t("mediaTitle")}
             </h4>
             <ul className="list-disc pl-5 sm:pl-6 text-gray-700 space-y-2 mb-6 text-sm sm:text-base">
-              {aiProjects.items.map((item) => (
+              {items.map((item) => (
                 <li key={item}>
                   <strong>{item}</strong>
                 </li>
               ))}
             </ul>
             <p className="text-sm text-gray-600 italic">
-              <span className="font-bold">{aiProjects.technologies}</span>{" "}
-              {aiProjects.techStack}
+              <span className="font-bold">{t("technologies")}</span>{" "}
+              {t("techStack")}
             </p>
           </div>
         </div>

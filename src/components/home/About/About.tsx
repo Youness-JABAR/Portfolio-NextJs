@@ -2,11 +2,14 @@
 
 import React from "react";
 import Image from "next/image";
-import { useLanguage } from "@/context/LanguageContext";
+import type { EducationItem } from "@/i18n/types";
+import { useTranslations } from "next-intl";
 
 const About: React.FC = () => {
-  const { t } = useLanguage();
-  const { about } = t;
+  const t = useTranslations("about");
+  const education = t.raw("education") as EducationItem[];
+  const certifications = t.raw("certifications") as string[];
+  const languages = t.raw("languages") as string[];
 
   return (
     <section
@@ -15,7 +18,7 @@ const About: React.FC = () => {
     >
       <div className="section-container text-center mb-8 md:mb-12">
         <h2 className="text-3xl sm:text-4xl font-bold uppercase text-gray-800 tracking-wide">
-          {about.title}
+          {t("title")}
         </h2>
       </div>
 
@@ -36,14 +39,14 @@ const About: React.FC = () => {
 
         <div className="lg:col-span-2 text-left">
           <p className="text-base sm:text-lg text-gray-800 leading-relaxed mb-8">
-            {about.profile}
+            {t("profile")}
           </p>
 
           <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-4">
-            {about.educationTitle}
+            {t("educationTitle")}
           </h3>
           <ul className="space-y-4 mb-8">
-            {about.education.map((item) => (
+            {education.map((item) => (
               <li
                 key={`${item.school}-${item.period}`}
                 className="border-l-4 border-blue-600 pl-4"
@@ -58,10 +61,10 @@ const About: React.FC = () => {
           </ul>
 
           <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-4">
-            {about.certificationsTitle}
+            {t("certificationsTitle")}
           </h3>
           <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-gray-700 mb-8">
-            {about.certifications.map((cert) => (
+            {certifications.map((cert) => (
               <li key={cert} className="text-sm">
                 {cert}
               </li>
@@ -69,10 +72,10 @@ const About: React.FC = () => {
           </ul>
 
           <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-4">
-            {about.languagesTitle}
+            {t("languagesTitle")}
           </h3>
           <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-gray-700 mb-8">
-            {about.languages.map((lang) => (
+            {languages.map((lang) => (
               <li key={lang}>{lang}</li>
             ))}
           </ul>
@@ -82,13 +85,13 @@ const About: React.FC = () => {
               href="#contact"
               className="text-blue-600 font-semibold underline hover:no-underline hover:text-blue-800 transition-colors duration-300"
             >
-              {about.cta}
+              {t("cta")}
             </a>
             <span className="text-gray-600">
               {" "}
-              {about.ctaSuffix}
-              <strong>{about.ctaHighlight}</strong>
-              {about.ctaSuffixEnd}
+              {t("ctaSuffix")}
+              <strong>{t("ctaHighlight")}</strong>
+              {t("ctaSuffixEnd")}
             </span>
           </p>
         </div>

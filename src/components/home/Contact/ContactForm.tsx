@@ -5,9 +5,9 @@ import { FormGroup } from "@/components/common/Form/FormGroup";
 import { FormLabel } from "@/components/common/Form/FormLabel";
 import { Input } from "@/components/common/Form/Input";
 import { Textarea } from "@/components/common/Form/Textarea";
-import { useLanguage } from "@/context/LanguageContext";
 import { Form, Formik, FormikHelpers } from "formik";
 import axios from "axios";
+import { useTranslations } from "next-intl";
 import { useMemo, useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { ZodError, z } from "zod";
@@ -24,20 +24,19 @@ export type ContactMessage = typeof initialValues;
 const siteKey = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY;
 
 const ContactForm = () => {
-  const { t } = useLanguage();
-  const form = t.contact.form;
+  const t = useTranslations("contact.form");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const schema = useMemo(
     () =>
       z.object({
-        name: z.string().min(1, form.validation.nameRequired),
-        email: z.string().email(form.validation.emailInvalid),
-        subject: z.string().min(1, form.validation.subjectRequired),
-        message: z.string().min(10, form.validation.messageMin),
+        name: z.string().min(1, t("validation.nameRequired")),
+        email: z.string().email(t("validation.emailInvalid")),
+        subject: z.string().min(1, t("validation.subjectRequired")),
+        message: z.string().min(10, t("validation.messageMin")),
       }),
-    [form]
+    [t]
   );
 
   const handleSubmit = async (
@@ -51,7 +50,7 @@ const ContactForm = () => {
       const captchaToken = siteKey ? recaptchaRef.current?.getValue() : undefined;
 
       if (siteKey && !captchaToken) {
-        actions.setStatus(form.validation.captchaRequired);
+        actions.setStatus(t("validation.captchaRequired"));
         return;
       }
 
@@ -68,7 +67,7 @@ const ContactForm = () => {
         actions.setStatus(err.response.data.message as string);
         return;
       }
-      actions.setStatus(form.error);
+      actions.setStatus(t("error"));
     } finally {
       actions.setSubmitting(false);
     }
@@ -102,11 +101,11 @@ const ContactForm = () => {
             </p>
           )}
           <FormGroup className="w-full mb-4 sm:pr-2 sm:w-1/2">
-            <FormLabel htmlFor="name">{form.name}</FormLabel>
+            <FormLabel htmlFor="name">{t("name")}</FormLabel>
             <Input
               id="name"
               name="name"
-              placeholder={form.namePlaceholder}
+              placeholder={t("namePlaceholder")}
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.name}
@@ -114,12 +113,12 @@ const ContactForm = () => {
             />
           </FormGroup>
           <FormGroup className="w-full mb-4 sm:pl-2 sm:w-1/2">
-            <FormLabel htmlFor="email">{form.email}</FormLabel>
+            <FormLabel htmlFor="email">{t("email")}</FormLabel>
             <Input
               id="email"
               name="email"
               type="email"
-              placeholder={form.emailPlaceholder}
+              placeholder={t("emailPlaceholder")}
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.email}
@@ -127,11 +126,11 @@ const ContactForm = () => {
             />
           </FormGroup>
           <FormGroup className="w-full mb-4">
-            <FormLabel htmlFor="subject">{form.subject}</FormLabel>
+            <FormLabel htmlFor="subject">{t("subject")}</FormLabel>
             <Input
               id="subject"
               name="subject"
-              placeholder={form.subjectPlaceholder}
+              placeholder={t("subjectPlaceholder")}
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.subject}
@@ -139,11 +138,11 @@ const ContactForm = () => {
             />
           </FormGroup>
           <FormGroup className="w-full mb-4">
-            <FormLabel htmlFor="message">{form.message}</FormLabel>
+            <FormLabel htmlFor="message">{t("message")}</FormLabel>
             <Textarea
               id="message"
               name="message"
-              placeholder={form.messagePlaceholder}
+              placeholder={t("messagePlaceholder")}
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.message}
@@ -157,15 +156,13 @@ const ContactForm = () => {
             </FormGroup>
           )}
 
-          {formSubmitted && (
-            <SuccessMessage>{form.success}</SuccessMessage>
-          )}
+          {formSubmitted && <SuccessMessage>{t("success")}</SuccessMessage>}
           <Button
             isLoading={isSubmitting}
             className="mt-4 sm:mt-8 mx-auto sm:mx-0"
             type="submit"
           >
-            {form.submit}
+            {t("submit")}
           </Button>
         </Form>
       )}
