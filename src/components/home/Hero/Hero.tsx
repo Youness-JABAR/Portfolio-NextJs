@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
     >
       <div className="w-full max-w-[1140px] mx-auto text-center flex flex-col items-center">
         <motion.h1
-          className="font-bold text-3xl xs:text-4xl sm:text-5xl lg:text-6xl mb-4 leading-tight"
+          className="font-bold text-3xl xs:text-4xl sm:text-5xl lg:text-6xl mb-4 mt-4 leading-tight"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}

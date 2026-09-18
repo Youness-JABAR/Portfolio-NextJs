@@ -30,14 +30,16 @@ const Projects: React.FC = () => {
           />
 
           <ProjectCard
-            imageUrl="/logo.png"
+            imageUrl="/images/projects/aigermanTutor.svg"
+            link="https://ai-deutsch-git-develop-younessjabars-projects.vercel.app/"
             title={t("aiGermanTutor.title")}
             description={t("aiGermanTutor.description")}
             technologies="AI, TypeScript, Next.js"
           />
 
           <ProjectCard
-            imageUrl="/favicon.png"
+            imageUrl="/images/projects/checkpoint.png"
+            link="https://chromewebstore.google.com/detail/checkpoint/lhdidcpjpibmchlibdgmgmeijldgcjac"
             title={t("checkpoint.title")}
             description={t("checkpoint.description")}
             technologies="Chrome Extension, OpenAI API, Make.com"

@@ -31,7 +31,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ src, alt, title }) => {
         </div>
         {/* Title */}
         <div className="my-4">
-          <h5 className="m-2 align-middle text-gray-700 text-lg font-medium">
+          <h5 className="m-2 align-middle text-gray-700 text-md font-medium">
             {title}
           </h5>
         </div>

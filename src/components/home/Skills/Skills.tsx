@@ -27,7 +27,7 @@ const Skills: React.FC = () => {
             <SkillCard src="images/skills/angular.svg" alt="Angular" title="Angular" />
             <SkillCard src="images/skills/ts.svg" alt="TypeScript" title="TypeScript" />
             <SkillCard src="images/skills/js.svg" alt="JavaScript" title="JavaScript" />
-            <SkillCard src="images/skills/Tailwind.svg" alt="Tailwind CSS" title="Tailwind CSS" />
+            <SkillCard src="images/skills/Tailwind.svg" alt="Tailwind CSS" title="TailwindCSS" />
           </div>
         </div>
 
@@ -36,10 +36,8 @@ const Skills: React.FC = () => {
             {t("backend")}
           </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
-            <SkillCard alt="Java" title="Java" />
-            <SkillCard alt="Spring Boot" title="Spring Boot" />
             <SkillCard src="images/skills/nodejs.svg" alt="Node.js" title="Node.js" />
-            <SkillCard alt="REST APIs" title="REST APIs" />
+            <SkillCard src="images/skills/springboot.svg" alt="Spring Boot" title="Spring Boot" />
             <SkillCard src="images/skills/laravel.svg" alt="Laravel" title="Laravel" />
             <SkillCard src="images/skills/strapi.svg" alt="Strapi" title="Strapi" />
           </div>
@@ -50,9 +48,9 @@ const Skills: React.FC = () => {
             {t("database")}
           </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
-            <SkillCard alt="PostgreSQL" title="PostgreSQL" />
+            <SkillCard src="images/skills/postgresql.svg" alt="PostgreSQL" title="PostgreSQL" />
             <SkillCard src="images/skills/mysql.svg" alt="MySQL" title="MySQL" />
-            <SkillCard alt="SQLite" title="SQLite" />
+            <SkillCard src="images/skills/sqlite.svg" alt="SQLite" title="SQLite" />
           </div>
         </div>
 
@@ -61,12 +59,12 @@ const Skills: React.FC = () => {
             {t("devops")}
           </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
-            <SkillCard alt="Docker" title="Docker" />
+            <SkillCard src="images/skills/linux.svg" alt="Linux" title="Linux" />
+            <SkillCard src="images/skills/docker.svg" alt="Docker" title="Docker" />
+            <SkillCard src="images/skills/github.svg" alt="GitHub" title="GitHub" />
             <SkillCard src="images/skills/gitlab.svg" alt="GitLab CI/CD" title="GitLab CI/CD" />
-            <SkillCard alt="Azure DevOps" title="Azure DevOps" />
+            <SkillCard src="images/skills/azure.svg" alt="Azure DevOps" title="Azure DevOps" />
             <SkillCard src="images/skills/gcp.svg" alt="Google Cloud" title="Google Cloud" />
-            <SkillCard alt="Linux" title="Linux" />
-            <SkillCard alt="Grafana" title="Grafana" />
           </div>
         </div>
 
@@ -75,12 +73,12 @@ const Skills: React.FC = () => {
             {t("testing")}
           </h3>
           <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
-            <SkillCard alt="Jest" title="Jest" />
-            <SkillCard alt="Selenium" title="Selenium" />
+            <SkillCard src="images/skills/jest.svg" alt="Jest" title="Jest" />
+            <SkillCard src="images/skills/selenium.svg" alt="Selenium" title="Selenium" />
             <SkillCard src="images/skills/git.svg" alt="Git" title="Git" />
-            <SkillCard alt="Jira" title="Jira" />
-            <SkillCard alt="Confluence" title="Confluence" />
-            <SkillCard alt="Swagger" title="Swagger" />
+            <SkillCard src="images/skills/jira.svg" alt="Jira" title="Jira" />
+            <SkillCard src="images/skills/confluence.svg" alt="Confluence" title="Confluence" />
+            <SkillCard src="images/skills/swagger.svg" alt="Swagger" title="Swagger" />
           </div>
         </div>
       </div>
