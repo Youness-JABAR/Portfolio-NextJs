@@ -1,4 +1,4 @@
-import type fr from "./messages/fr";
+import type fr from "./i18n/locales/fr";
 
 type Messages = typeof fr;
 
