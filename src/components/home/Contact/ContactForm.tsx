@@ -7,9 +7,10 @@ import { Input } from "@/components/common/Form/Input";
 import { Textarea } from "@/components/common/Form/Textarea";
 import { useLanguage } from "@/context/LanguageContext";
 import { Form, Formik, FormikHelpers } from "formik";
-import { ZodError, z } from "zod";
 import axios from "axios";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { ZodError, z } from "zod";
 import { SuccessMessage } from "./SuccessMessage";
 
 const initialValues = {
@@ -20,10 +21,13 @@ const initialValues = {
 };
 export type ContactMessage = typeof initialValues;
 
+const siteKey = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY;
+
 const ContactForm = () => {
   const { t } = useLanguage();
   const form = t.contact.form;
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const schema = useMemo(
     () =>
@@ -42,11 +46,31 @@ const ContactForm = () => {
   ) => {
     try {
       setFormSubmitted(false);
-      await axios.post("/api/contact", values);
+      actions.setStatus(undefined);
+
+      const captchaToken = siteKey ? recaptchaRef.current?.getValue() : undefined;
+
+      if (siteKey && !captchaToken) {
+        actions.setStatus(form.validation.captchaRequired);
+        return;
+      }
+
+      await axios.post("/api/contact", {
+        ...values,
+        captchaToken,
+      });
+
       setFormSubmitted(true);
       actions.resetForm();
+      recaptchaRef.current?.reset();
     } catch (err) {
+      if (axios.isAxiosError(err) && err.response?.data?.message) {
+        actions.setStatus(err.response.data.message as string);
+        return;
+      }
       actions.setStatus(form.error);
+    } finally {
+      actions.setSubmitting(false);
     }
   };
 
@@ -126,12 +150,19 @@ const ContactForm = () => {
               error={touched.message ? errors.message : ""}
             />
           </FormGroup>
+
+          {siteKey && (
+            <FormGroup className="w-full mb-4 flex justify-center sm:justify-start overflow-hidden">
+              <ReCAPTCHA ref={recaptchaRef} sitekey={siteKey} />
+            </FormGroup>
+          )}
+
           {formSubmitted && (
             <SuccessMessage>{form.success}</SuccessMessage>
           )}
           <Button
             isLoading={isSubmitting}
-            className="mt-8 mx-auto"
+            className="mt-4 sm:mt-8 mx-auto sm:mx-0"
             type="submit"
           >
             {form.submit}

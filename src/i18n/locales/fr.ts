@@ -179,7 +179,9 @@ const fr = {
         emailInvalid: "Format d'email invalide",
         subjectRequired: "Le sujet est requis",
         messageMin: "Le message doit contenir au moins 10 caractères",
+        captchaRequired: "Veuillez valider le captcha.",
       },
+      captchaFailed: "La vérification captcha a échoué. Veuillez réessayer.",
     },
   },
   footer: {
